@@ -1,6 +1,6 @@
 ---
-title: 每天10个前端知识点：HTML5(地理位置、audio)
-date: 2017-03-26 03:27:35
+title: 每天10个前端知识点：HTML5(选择器、自定义属性、存储)
+date: 2017-03-20 03:27:35
 categories: 前端札记
 tags: [HTML5]
 
