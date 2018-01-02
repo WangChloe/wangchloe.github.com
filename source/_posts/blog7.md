@@ -117,7 +117,7 @@ eg:
 ## 3. DOM节点操作
 1. 创建一个节点
 	var obj = document.createElement('tagName');
-2. 添加一个节点(**所有的添加功能都相当于剪切功能**)
+2. 添加一个节点
 	父节点.appendChild(要添加的节点);
 	父节点.insertBefore(要添加的节点, 在谁前面添加);
 3. 删除一个节点
@@ -151,7 +151,7 @@ eg:
 		FF：没有反应
 		IE：提示
 		*：只能关闭自己open出来的窗口
-3. window.location  		获取地址栏信息对象
+3. window.location  		获取地址栏信息
 	返回值数据类型：object
   - window.location.href    	获取地址栏信息
 	返回值数据类型：string

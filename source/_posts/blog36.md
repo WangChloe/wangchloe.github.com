@@ -21,7 +21,6 @@ tags: [HTML5]
 ---
 
 ## 14. H5内联SVG
-
 SVG(Scalable Vector Graphic 可伸缩矢量图形)
 VML(The Vector Markup Language  矢量可标记语言)
 
@@ -44,14 +43,14 @@ VML(The Vector Markup Language  矢量可标记语言)
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="801px" height="792px" viewBox="0 0 801 792" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    ...
+	...
 </svg>
 ```
 
 2.
 ```
 <svg>
-    <rect x="20" y="20" rx="20" ry="20" width="250" height="250" style="fill:blue;stroke:pink;stroke-width:5;fill-opacity:0.1;stroke-opacity:0.9"/>
+	<rect x="20" y="20" rx="20" ry="20" width="250" height="250" style="fill:blue;stroke:pink;stroke-width:5;fill-opacity:0.1;stroke-opacity:0.9"/>
 </svg>
 ```
 
@@ -59,16 +58,16 @@ VML(The Vector Markup Language  矢量可标记语言)
 ```
 <svg width="200" height="200"></svg>
 <script>
-    var oSvg = document.querySelector('svg');
-    var oLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+	var oSvg = document.querySelector('svg');
+	var oLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
 
-    oLine.setAttribute('x1', '10');
-    oLine.setAttribute('y1', '10');
-    oLine.setAttribute('x2', '100');
-    oLine.setAttribute('y2', '100');
-    oLine.setAttribute('stroke', 'green');
+	oLine.setAttribute('x1', '10');
+	oLine.setAttribute('y1', '10');
+	oLine.setAttribute('x2', '100');
+	oLine.setAttribute('y2', '100');
+	oLine.setAttribute('stroke', 'green');
 
-    oSvg.appendChild(oLine);
+	oSvg.appendChild(oLine);
 </script>
 ```
 
@@ -155,8 +154,8 @@ VML(The Vector Markup Language  矢量可标记语言)
 获取路径长度
 ```
 <script>
-    var path = document.querySelector('path');
-    var length = path.getTotalLength();
+	var path = document.querySelector('path');
+	var length = path.getTotalLength();
 </script>
 ```
 
@@ -164,26 +163,26 @@ VML(The Vector Markup Language  矢量可标记语言)
 
 ``` css
 <style>
-    .one {
-        stroke-dasharray: 600;
-        stroke-dashoffset: 600;
-        animation: ani 2s forwards;
-    }
-    .two {
-        stroke-dasharray: 600;
-        stroke-dashoffset: 600;
-        animation: ani 1.8s forwards 0.2s;
-    }
-    .three {
-        stroke-dasharray: 600;
-        stroke-dashoffset: 600;
-        animation: ani 1.6s forwards 0.4s;
-    }
-    @keyframes ani {
-        to {
-            stroke-dashoffset: 0;
-        }
-    }
+	.one {
+		stroke-dasharray: 600;
+		stroke-dashoffset: 600;
+		animation: ani 2s forwards;
+	}
+	.two {
+		stroke-dasharray: 600;
+		stroke-dashoffset: 600;
+		animation: ani 1.8s forwards 0.2s;
+	}
+	.three {
+		stroke-dasharray: 600;
+		stroke-dashoffset: 600;
+		animation: ani 1.6s forwards 0.4s;
+	}
+	@keyframes ani {
+		to {
+			stroke-dashoffset: 0;
+		}
+	}
 </style>
 ```
 
@@ -191,70 +190,64 @@ VML(The Vector Markup Language  矢量可标记语言)
 
 ``` html
 <svg width="800" height="600">
-    <!-- one -->
-    <path d="M149.593084,114.512754 C149.593084,80.6086232 265.458217,31.6263568 265.458217,144.647923 C265.458217,257.669489 149.593084,288.726563 149.593084,288.726563 L291.550902,288.726563" class="one" stroke="#4A4A4A" stroke-width="8" fill="none" stroke-lineCap="round"></path>
-    <path d="M391.00506,81.6608912 C297.400634,81.6608912 275.086722,284.767558 384.426619,284.767558 C493.766517,284.767558 484.609487,81.6608912 391.00506,81.6608912 Z" class="one"  stroke="#4A4A4A" stroke-width="8" fill="none" stroke-lineCap="round"></path>
-    <path d="M508.720275,85.6448695 C519.572766,106.125165 510.370277,296.381449 510.370277,296.381449" class="one"  stroke="#4A4A4A" stroke-width="8" fill="none" stroke-lineCap="round"></path>
-    <path d="M570.187369,93.0436865 C570.187369,93.0436865 703.312123,69.0165013 703.312123,103.354018 C703.312123,137.691534 595.118196,304.797696 595.118196,304.797696" class="one"  stroke="#4A4A4A" stroke-width="8" fill="none" stroke-lineCap="round"></path>
-    <!-- two -->
-    <path d="M149.593084,114.512754 C149.593084,80.6086232 265.458217,31.6263568 265.458217,144.647923 C265.458217,257.669489 149.593084,288.726563 149.593084,288.726563 L291.550902,288.726563" class="two" stroke="#029df9" stroke-width="8" fill="none" stroke-lineCap="round"></path>
-    <path d="M391.00506,81.6608912 C297.400634,81.6608912 275.086722,284.767558 384.426619,284.767558 C493.766517,284.767558 484.609487,81.6608912 391.00506,81.6608912 Z" class="two" stroke="#029df9" stroke-width="8" fill="none" stroke-lineCap="round"></path>
-    <path d="M508.720275,85.6448695 C519.572766,106.125165 510.370277,296.381449 510.370277,296.381449" class="two" stroke="#029df9" stroke-width="8" fill="none" stroke-lineCap="round"></path>
-    <path d="M570.187369,93.0436865 C570.187369,93.0436865 703.312123,69.0165013 703.312123,103.354018 C703.312123,137.691534 595.118196,304.797696 595.118196,304.797696" class="two" stroke="#029df9" stroke-width="8" fill="none" stroke-lineCap="round"></path>
-    <!-- three -->
-    <path d="M149.593084,114.512754 C149.593084,80.6086232 265.458217,31.6263568 265.458217,144.647923 C265.458217,257.669489 149.593084,288.726563 149.593084,288.726563 L291.550902,288.726563" class="three" stroke="#90da32" stroke-width="8" fill="none" stroke-lineCap="round"></path>
-    <path d="M391.00506,81.6608912 C297.400634,81.6608912 275.086722,284.767558 384.426619,284.767558 C493.766517,284.767558 484.609487,81.6608912 391.00506,81.6608912 Z" class="three" stroke="#90da32" stroke-width="8" fill="none" stroke-lineCap="round"></path>
-    <path d="M508.720275,85.6448695 C519.572766,106.125165 510.370277,296.381449 510.370277,296.381449" class="three" stroke="#90da32" stroke-width="8" fill="none" stroke-lineCap="round"></path>
-    <path d="M570.187369,93.0436865 C570.187369,93.0436865 703.312123,69.0165013 703.312123,103.354018 C703.312123,137.691534 595.118196,304.797696 595.118196,304.797696" class="three" stroke="#90da32" stroke-width="8" fill="none" stroke-lineCap="round"></path>
+	<!-- one -->
+	<path d="M149.593084,114.512754 C149.593084,80.6086232 265.458217,31.6263568 265.458217,144.647923 C265.458217,257.669489 149.593084,288.726563 149.593084,288.726563 L291.550902,288.726563" class="one" stroke="#4A4A4A" stroke-width="8" fill="none" stroke-lineCap="round"></path>
+	<path d="M391.00506,81.6608912 C297.400634,81.6608912 275.086722,284.767558 384.426619,284.767558 C493.766517,284.767558 484.609487,81.6608912 391.00506,81.6608912 Z" class="one"  stroke="#4A4A4A" stroke-width="8" fill="none" stroke-lineCap="round"></path>
+	<path d="M508.720275,85.6448695 C519.572766,106.125165 510.370277,296.381449 510.370277,296.381449" class="one"  stroke="#4A4A4A" stroke-width="8" fill="none" stroke-lineCap="round"></path>
+	<path d="M570.187369,93.0436865 C570.187369,93.0436865 703.312123,69.0165013 703.312123,103.354018 C703.312123,137.691534 595.118196,304.797696 595.118196,304.797696" class="one"  stroke="#4A4A4A" stroke-width="8" fill="none" stroke-lineCap="round"></path>
+	<!-- two -->
+	<path d="M149.593084,114.512754 C149.593084,80.6086232 265.458217,31.6263568 265.458217,144.647923 C265.458217,257.669489 149.593084,288.726563 149.593084,288.726563 L291.550902,288.726563" class="two" stroke="#029df9" stroke-width="8" fill="none" stroke-lineCap="round"></path>
+	<path d="M391.00506,81.6608912 C297.400634,81.6608912 275.086722,284.767558 384.426619,284.767558 C493.766517,284.767558 484.609487,81.6608912 391.00506,81.6608912 Z" class="two" stroke="#029df9" stroke-width="8" fill="none" stroke-lineCap="round"></path>
+	<path d="M508.720275,85.6448695 C519.572766,106.125165 510.370277,296.381449 510.370277,296.381449" class="two" stroke="#029df9" stroke-width="8" fill="none" stroke-lineCap="round"></path>
+	<path d="M570.187369,93.0436865 C570.187369,93.0436865 703.312123,69.0165013 703.312123,103.354018 C703.312123,137.691534 595.118196,304.797696 595.118196,304.797696" class="two" stroke="#029df9" stroke-width="8" fill="none" stroke-lineCap="round"></path>
+	<!-- three -->
+	<path d="M149.593084,114.512754 C149.593084,80.6086232 265.458217,31.6263568 265.458217,144.647923 C265.458217,257.669489 149.593084,288.726563 149.593084,288.726563 L291.550902,288.726563" class="three" stroke="#90da32" stroke-width="8" fill="none" stroke-lineCap="round"></path>
+	<path d="M391.00506,81.6608912 C297.400634,81.6608912 275.086722,284.767558 384.426619,284.767558 C493.766517,284.767558 484.609487,81.6608912 391.00506,81.6608912 Z" class="three" stroke="#90da32" stroke-width="8" fill="none" stroke-lineCap="round"></path>
+	<path d="M508.720275,85.6448695 C519.572766,106.125165 510.370277,296.381449 510.370277,296.381449" class="three" stroke="#90da32" stroke-width="8" fill="none" stroke-lineCap="round"></path>
+	<path d="M570.187369,93.0436865 C570.187369,93.0436865 703.312123,69.0165013 703.312123,103.354018 C703.312123,137.691534 595.118196,304.797696 595.118196,304.797696" class="three" stroke="#90da32" stroke-width="8" fill="none" stroke-lineCap="round"></path>
 </svg>
 ```
 
-
-![应用_svg 2017.gif](http://upload-images.jianshu.io/upload_images/2125655-cf23014776dbd171.gif?imageMogr2/auto-orient/strip)
-
-
 ### (5) 矢量图形库 Raphael.js
-[Raphaël Reference](http://dmitrybaranovskiy.github.io/raphael/)
+[Raphaël Reference](http://dmitrybaranovskiy.github.io/raphael/reference.html)
 
 示例
 ```
 <script src="libs/raphael.min.js"></script>
 <script>
-    // Creates canvas 320 × 200 at 10, 50
-    var paper = Raphael(10, 50, 320, 200);
+	// Creates canvas 320 × 200 at 10, 50
+	var paper = Raphael(10, 50, 320, 200);
 
-    // Creates circle at x = 50, y = 40, with radius 10
-    var circle = paper.circle(50, 40, 10);
-    // Sets the fill attribute of the circle to red (#f00)
-    circle.attr("fill", "#f00");
+	// Creates circle at x = 50, y = 40, with radius 10
+	var circle = paper.circle(50, 40, 10);
+	// Sets the fill attribute of the circle to red (#f00)
+	circle.attr("fill", "#f00");
 
-    // Sets the stroke attribute of the circle to white
-    circle.attr("stroke", "#fff");
+	// Sets the stroke attribute of the circle to white
+	circle.attr("stroke", "#fff");
 
-    circle.click(function() {
-        this.animate({
-            fill: '#fe0',
-            y: 100
-        }, 500, 'bounce');
-    })
+	circle.click(function() {
+		this.animate({
+			fill: '#fe0',
+			y: 100
+		}, 500, 'bounce');
+	})
 
-    // circle.drag(function(dx,dy){
-    //  this.attr({
-    //      x: x + dx,
-    //      y: y + dy
-    //  })
-    // },function(){
-    //  x = this.attr('x')
-    //  y = this.attr('y')
-    // })
+	// circle.drag(function(dx,dy){
+	// 	this.attr({
+	// 		x: x + dx,
+	// 		y: y + dy
+	// 	})
+	// },function(){
+	// 	x = this.attr('x')
+	// 	y = this.attr('y')
+	// })
 </script>
 ```
 
-![应用_svg矢量图形库 Raphael.gif](http://upload-images.jianshu.io/upload_images/2125655-3d99bfc6dd83f68f.gif?imageMogr2/auto-orient/strip)
 
 
 ---
-
 更多内容可以订阅本人微信公众号，一起开启前端小白进阶的世界！
 
 公众号是坚持日更的，不发文的时候推送一些我觉得好用的前端网站或者看到的一些问题的解决方案，也更便于大家交流，就酱。

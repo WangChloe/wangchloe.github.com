@@ -165,7 +165,7 @@ clearTimeout(定时器的名字);
 </script>
 ```
 
-##7. 日期对象应用
+## 7. 日期对象应用
 > oDate.setDate(31); // 假设本月有30天会跑到下个月的第一天 会自动进位
 > oDate.setDate(0); // 会跑到上个月的最后一天
 
@@ -197,65 +197,6 @@ clearTimeout(定时器的名字);
 	alert(oDate.getDay());
 </script>
 ```
-
-### 倒计时
-
-```
-<input type="text" placeholder="年">
-<input type="text" placeholder="月">
-<input type="text" placeholder="日">
-<button>倒计时</button>
-<p></p>
-```
-
-
-```
-<script>
-	fnDJ();
-
-	function fnDJ() {
-		var oP = document.querySelector('p');
-		var aInp = document.querySelectorAll('input');
-		var oBtn = document.querySelector('button');
-
-		var timer = null;
-
-		oBtn.onclick = function() {
-			clearInterval(timer);
-			var oEndDate = new Date();
-			var year = Number(aInp[0].value);
-			var month = Number(aInp[1].value);
-			var day = Number(aInp[2].value);
-
-			oEndDate.setFullYear(year, month, day);
-			oEndDate.setHours(0, 0, 0, 0);
-
-			fnClock();
-			timer = setInterval(fnClock, 1000);
-
-			function fnClock() {
-				var oBeDate = new Date();
-
-				var iS = parseInt((oEndDate.getTime() - oBeDate.getTime())/1000);
-				var iD = parseInt(iS/86400);
-				iS %= 86400;
-				var iH = parseInt(iS/3600);
-				iS %= 3600;
-				var iM = parseInt(iS/60);
-				iS %= 60;
-
-				oP.innerHTML = fnBL(iD) + '天' + fnBL(iH) + '时' + fnBL(iM) + '分' + fnBL(iS) + '秒';
-			}
-		}
-
-	}
-
-	function fnBL(num) {
-		return num < 10 ? '0' + num : '' + num;
-	}
-</script>
-```
-
 
 ## 8. 事件函数相同可以合并
 eg: oDiv1.onmouseout = oDiv2.onmouseout = function() {};

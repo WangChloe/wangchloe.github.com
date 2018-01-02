@@ -16,7 +16,7 @@ tags: [js]
 
 ---
 
-##1. 参数的数组arguments
+## 1. 参数的数组arguments
 参数中的数组，函数中可以不需要定义参数
 ``` javascript
 <script>
@@ -31,7 +31,7 @@ tags: [js]
 
 <!-- more -->
 
-##2. 设置样式的三种方法
+## 2. 设置样式的三种方法
 1. style.xxx
 oDiv.style.width = '300px';
 
@@ -42,69 +42,56 @@ oDiv.className = 'active';
 批量设置样式
 oDiv.style.cssText = 'width: 300px; height: 300px';
 
-##3. 字符串的相关方法
+## 3. 字符串的相关方法
 - str.charAt(i); 获取字符串中的第i+1个字符  返回值：相应位置的字符
 
-  > str[i]的兼容问题
-  获取字符串中的第i+1个
-  - str[i]  兼容：高级浏览器及IE8+
+> str[i]的兼容问题
+获取字符串中的第i+1个
+- str[i]  兼容：高级浏览器及IE8+
 		  IE7 -> undefined
-  - str.charAt(i)  全兼容
+- str.charAt(i)  全兼容
 
 - str.indexOf('w'); 查找w在字符串中的位置  返回值：成功 -> w在字符串中的位置  失败 -> -1
 
-  > 
-  1. 从左往右找
-  2. 区分大小写
-  3. 找到第一个相同值即停止
-  4. 查找多个字符时，返回第一个字符的位置
+> 
+1. 从左往右找
+2. 区分大小写
+3. 找到第一个相同值即停止
+4. 查找多个字符时，返回第一个字符的位置
 
 -  str.lastIndexOf('w'); 查找w在字符串中的位置  返回值：成功 -> w在字符串中的位置  失败 -> -1
 
-  > 从右往左倒序查找，返回的索引值与indexOf()规则相同
+> 从右往左倒序查找，返回的索引值与indexOf()规则相同
 
--  str.search('w'); 与indexOf()规则相同 
-  > search 是强制**正则匹配**，而 indexOf 只是按字符串匹配的。
+-  str.search('w'); 与indexOf()规则相同 **常用于正则**
 
 -  str.substring(开始位置, 结束位置); 截取字符串，包含开始位置，不包含结束位置
 
-  > str.substring(开始位置); 截取字符串 **从开始位置一直截取到最后**
+> str.substring(开始位置); 截取字符串 **从开始位置一直截取到最后**
 
 -  str.substr(开始位置, 截取字符串长度); 定长截取字符串
 
 -  str.slice(开始位置, 结束位置); 截取字符串
-> slice和substring的区别 
-对于负数参数，slice()方法会用字符串的长度加上参数，subString()方法将其作为0处理
-```
-<script>
-	var strObj = new String("hello world");
-	alert(strObj.slice(-3));　　　　　　// 输出结果："rld"
-	alert(strObj.subString(-3));　　　 // 输出结果："hello world"
-	alert(strObj.slice(3,-4));　　　　 // 输出结果："lo w"
-	alert(strObj.subString(3,-4))　　 // 输出结果："hel"  substring(0, 3)
-</script>
-```
-
 
 -  str.match('w'); 在字符串中匹配w **常用于正则** 返回值：成功 -> 匹配的w  失败 -> null
 
 -  str.split('w'); 切割字符串 **返回值类型：数组**
 
-  > 
-  1. 字符串按w割开，去掉w后组成的数组
-  2. **若没找到w则原样返回一个长度为1的数组**
-  3. 若为''(空字符串，无空格)则返回将str中每个字符逐个拆开的数组
+> 
+1. 字符串按w割开，去掉w后组成的数组
+2. **若没找到w则原样返回一个长度为1的数组**
+3. 若为''(空字符串，无空格)则返回将str中每个字符逐个拆开的数组
 
 -  str.toUpperCase(); str转大写
     str.toLowerCase(); str转小写
 
 -  str.replace('xxx', 'yyy'); **常用于正则** 参数：被替换内容,替换内容
 
-  > 
-  1. **修改第一个被替换内容**
-  2. **替换不修改原字符串, 需重新声明**
-  3. **第二个参数可为一个方法**
-  4. **replace可以连用**
+> 
+1. **修改第一个被替换内容**
+2. **替换不修改原字符串, 需重新声明**
+3. **第二个参数可为一个方法**
+4. **replace可以连用**
 
 ``` javascript
 <script>
@@ -136,17 +123,17 @@ oDiv.style.cssText = 'width: 300px; height: 300px';
 
 -  str.charCodeAt(i);	// 获取字符串中的第i+1个字符对应的ASCII编码
 
-  > a-> 0x61 -> 97
-  > b-> 0x62 -> 98
-  > z -> 0x7A -> 122
+> a-> 0x61 -> 97
+> b-> 0x62 -> 98
+> z -> 0x7A -> 122
 
-##4. 字符串比较
+## 4. 字符串比较
 - 英文 按照字典序(a~z)依次比较，z为最大；从两字符串的第一个字符开始，若相当再比较下一个字符
 - 数字 按照数字大小依次；从两字符串的第一个字符开始，若相当再比较下一个字符
 - 汉字 按照unicode大小比较
 
-##5. 字符串应用
-###判断浏览器的类型
+## 5. 字符串应用
+### 判断浏览器的类型
 window.navigator.userAgent
 eg:
 ``` javascript
@@ -162,7 +149,7 @@ eg:
 	}
 </script>
 ```
-###判断上传文件格式
+### 判断上传文件格式
 eg:
 ``` javascript
 <script>
@@ -171,14 +158,14 @@ eg:
 </script>
 ```
 
-##6. 定义数组
+## 6. 定义数组
 1. var arr = [1, 2, 3];
 2. var arr = new Array(1, 2, 3);
 
 > Array()只传一个参数时表示定义一个新数组的长度
 > new Array(10); 定义一个长度为10的数组
 
-##7. 数组的相关方法
+## 7. 数组的相关方法
 -  arr.push('w'); 往数组最后面添加一项  返回值：新添加的那项
 -  arr.unshift('w'); 往数组最前面添加一项  **返回值：新数组长度**
 -  arr.pop(); 删除数组最后一项  返回值：删除的那项
@@ -188,28 +175,21 @@ eg:
 -  arr.reverse(); 数组翻转
 -  arr.sort(); 数组排序(按字典序和数字序列)
 
-  > 高级排序 数值排序
-  - 从小到大
-```
-<script> 
+> 高级排序 数值排序
+- 从小到大
 arr.sort(function(n1, n2){
-	return n1-n2;  // 可理解为：当n1-n2为正值即n1>n2时，需调换顺序，则为大的向后挪，小的向前挪 -> 升序
+	return n1-n2;
 });
-</script> 
-```
-  - 从大到小
-```
-<script> 
+- 从大到小
 arr.sort(function(n1, n2){
-	return n2-n1;   // 可理解为：当n2-n1为正值即n2>n1时，需调换顺序，则为大的向前挪，小的向后挪 -> 降序
+	return n2-n1;
 });
-</script> 
-```
+
 -  arr.splice(开始位置, 删除个数, 元素1, 元素2);
 
 ``` javascript
 <script>
-	var arr1=[1,2,3,4];
+   var arr1=[1,2,3,4];
    arr1.splice(1, 0, 'a', 'b');	//添加：在1后添加'a','b'	返回值：返回空数组
 
    var arr2=[1,2,3,4];
@@ -226,12 +206,12 @@ arr.sort(function(n1, n2){
 3）arr.pop();      -> arr.splice(arr.length-1, 1);
 4）arr.shift();    -> arr.splice(0, 1);
 
-##8. json(object类型)
+## 8. json(object类型)
 json格式：{name:value,name2:value2, ...}
 json标准格式：{"name":value, "name2":value2, ...}
-> - 所有键名需双引号,键值非数字时需加引号
-> - 键值对没有json.length
-> - json的name是唯一的
+> 所有键名需双引号,键值非数字时需加引号
+> 键值对没有json.length
+> json的name是唯一的
 
 - 获取json值: json.name 或者 json['name']
 - 添加/修改: json.aaa = 'bbb'; 或者 json['aaa'] = 'bbb';
@@ -246,24 +226,24 @@ json标准格式：{"name":value, "name2":value2, ...}
 </script>
 ```
 
-###json和数组的区别
-####length
+### json和数组的区别
+#### length
 - 数组：有length
 - json：没有length
 
-####循环遍历方法
+#### 循环遍历方法
 - 数组：for(var i=0;i<arr.length;i++){alert(arr[i])};	for循环
 - json：for(var name in json){alert(json[name])};		for in循环
 
-###访问元素下标类型
+### 访问元素下标类型
 - 数组：arr[1]  数字
 - json：json['a']  字符串
 
-####顺序
+#### 顺序
 - 数组：有序，根据下标访问
 - json：无序，根据键名访问
 
-##9. Math方法
+## 9. Math方法
 1. `Math.random()`	 			0-1随机数（不包含1）
 2. `Math.abs(num)`			绝对值
 3. `Math.max(num1, num2, ...)`	最大数
@@ -276,7 +256,7 @@ json标准格式：{"name":value, "name2":value2, ...}
 
 > `num.toFixed(保留小数个数);`  保留几位小数(自动四舍五入)
 
-##10. try-catch捕获异常
+## 10. try-catch捕获异常
 ``` javascript
 <script>
 	try {
@@ -289,7 +269,6 @@ json标准格式：{"name":value, "name2":value2, ...}
 	}
 </script>
 ```
-
 
 
 ---

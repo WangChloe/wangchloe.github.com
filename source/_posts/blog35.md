@@ -31,47 +31,36 @@ tags: [HTML5]
 	var oC = document.querySelector('canvas');
 	var ctx = oC.getContext('2d');
 
-    // face
-    ctx.fillStyle = 'yellow';
-    ctx.arc(400, 250, 180, 0, 2 * Math.PI, false);
-    ctx.fill();
-    ctx.stroke();
+	// face
+	ctx.fillStyle = 'yellow';
+	ctx.arc(400, 250, 180, 0, 2 * Math.PI, false);
+	ctx.fill();
+	ctx.stroke();
 
-    // mouth
-    ctx.beginPath();
-    ctx.lineCap = 'round';
+	// mouth
+	ctx.beginPath();
+	ctx.lineCap = 'round';
 
-    ctx.lineWidth = 20;
-    ctx.fillStyle = 'red';
-    // ctx.arc(400, 280, 80, 0, Math.PI, false); // 笑脸
-    ctx.arc(400, 350, 80, Math.PI, 0, false); //不开心脸
-    // ctx.fill();  // 红色实心半圆张嘴笑脸
-    ctx.stroke(); // 黑色半圆弧微笑脸
+	ctx.lineWidth = 20;
+	ctx.fillStyle = 'red';
+	ctx.arc(400, 280, 80, 0, Math.PI, false);
+	// ctx.fill();  // 红色实心半圆张嘴笑脸
+	ctx.stroke();  // 黑色半圆弧微笑脸
 
-    // eyes
-    ctx.beginPath();
-    ctx.fillStyle = 'black';
-    ctx.moveTo(350, 200);
-    ctx.arc(350, 200, 20, 0, 2 * Math.PI, false);
+	// eyes
+	ctx.beginPath();
+	ctx.fillStyle = 'black';
+	ctx.moveTo(350, 200);
+	ctx.arc(350, 200, 20, 0, 2 * Math.PI, false);
 
-    ctx.moveTo(450, 200);
-    ctx.arc(450, 200, 20, 0, 2 * Math.PI, false);
+	ctx.moveTo(450, 200);
+	ctx.arc(450, 200, 20, 0, 2 * Math.PI, false);
 
-    ctx.closePath();
+	ctx.closePath();
 
-    ctx.fill();
+	ctx.fill();
 </script>
 ```
-
-
-![应用_canvas笑脸.PNG](http://upload-images.jianshu.io/upload_images/2125655-28ebcaa31def035a.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-
-![应用_canvas笑脸2.PNG](http://upload-images.jianshu.io/upload_images/2125655-578a2a6d3743a8d9.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-
-![应用_canvas笑脸3.PNG](http://upload-images.jianshu.io/upload_images/2125655-abef3669f38f982d.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
 
 ### (2) 应用 canvas画图
 ```
@@ -110,12 +99,6 @@ tags: [HTML5]
 	}
 </script>
 ```
-
-
-
-![应用_canvas画图.gif](http://upload-images.jianshu.io/upload_images/2125655-f340c24012917b44.gif?imageMogr2/auto-orient/strip)
-
-
 
 ### (3) 应用 canvas变换
 ```
@@ -163,10 +146,6 @@ tags: [HTML5]
 		}
 	</script>
 ```
-
-
-![应用_canvas变换.gif](http://upload-images.jianshu.io/upload_images/2125655-26862c67c81cfe41.gif?imageMogr2/auto-orient/strip)
-
 
 ### (4) 应用 canvas内长方形拖拽
 ```
@@ -239,10 +218,6 @@ tags: [HTML5]
 </script>
 ```
 
-
-![应用_canvas内长方形拖拽.gif](http://upload-images.jianshu.io/upload_images/2125655-fc21ecb61e9e36f1.gif?imageMogr2/auto-orient/strip)
-
-
 ### (5) 应用 canvas内圆形拖拽
 ```
 <canvas width="800" height="600"></canvas>
@@ -302,11 +277,6 @@ tags: [HTML5]
 </script>
 
 ```
-
-
-![应用_canvas内圆形拖拽.gif](http://upload-images.jianshu.io/upload_images/2125655-4cd05bd21c0e6ad7.gif?imageMogr2/auto-orient/strip)
-
-
 
 ### (6) 应用 下载canvas绘图
 ```
@@ -373,9 +343,6 @@ tags: [HTML5]
 	}
 </script>
 ```
-
-![应用_下载canvas绘图.gif](http://upload-images.jianshu.io/upload_images/2125655-bd093cf7df7b2bb3.gif?imageMogr2/auto-orient/strip)
-
 
 ### (7) 应用 canvas运动回调
 ```
@@ -467,14 +434,10 @@ tags: [HTML5]
 </script>
 ```
 
-![canvas框架 jCanvaScript.gif](http://upload-images.jianshu.io/upload_images/2125655-0e38ec1c6db6d023.gif?imageMogr2/auto-orient/strip)
-
-
 
 
 
 ---
-
 更多内容可以订阅本人微信公众号，一起开启前端小白进阶的世界！
 
 公众号是坚持日更的，不发文的时候推送一些我觉得好用的前端网站或者看到的一些问题的解决方案，也更便于大家交流，就酱。
