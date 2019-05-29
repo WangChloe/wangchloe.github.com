@@ -2166,10 +2166,10 @@
       <title><![CDATA[每天10个前端知识点：HTML5(选择器、自定义属性、存储)]]></title>
       <url>http://wangchloe.vip/2017/03/20/blog31/</url>
       <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
-<div id="aplayer23" class="aplayer" style="margin-bottom: 20px;"></div>
+<div id="aplayer14" class="aplayer" style="margin-bottom: 20px;"></div>
 		<script>
 			var ap = new APlayer({
-				element: document.getElementById("aplayer23"),
+				element: document.getElementById("aplayer14"),
 				narrow: false,
 				autoplay: false,
 				showlrc: 0,
@@ -2288,10 +2288,10 @@
       <title><![CDATA[每天10个前端知识点：HTML5(选择器、自定义属性、存储)]]></title>
       <url>http://wangchloe.vip/2017/03/19/blog30/</url>
       <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
-<div id="aplayer22" class="aplayer" style="margin-bottom: 20px;"></div>
+<div id="aplayer13" class="aplayer" style="margin-bottom: 20px;"></div>
 		<script>
 			var ap = new APlayer({
-				element: document.getElementById("aplayer22"),
+				element: document.getElementById("aplayer13"),
 				narrow: false,
 				autoplay: false,
 				showlrc: 0,
@@ -2443,10 +2443,10 @@
       <title><![CDATA[每天10个前端知识点：HTML5(新增元素及属性)]]></title>
       <url>http://wangchloe.vip/2017/03/18/blog29/</url>
       <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
-<div id="aplayer20" class="aplayer" style="margin-bottom: 20px;"></div>
+<div id="aplayer33" class="aplayer" style="margin-bottom: 20px;"></div>
 		<script>
 			var ap = new APlayer({
-				element: document.getElementById("aplayer20"),
+				element: document.getElementById("aplayer33"),
 				narrow: false,
 				autoplay: false,
 				showlrc: 0,
@@ -2737,10 +2737,10 @@
       <title><![CDATA[每天10个前端知识点：代码管理及常见命令]]></title>
       <url>http://wangchloe.vip/2017/03/14/blog27/</url>
       <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
-<div id="aplayer19" class="aplayer" style="margin-bottom: 20px;"></div>
+<div id="aplayer32" class="aplayer" style="margin-bottom: 20px;"></div>
 		<script>
 			var ap = new APlayer({
-				element: document.getElementById("aplayer19"),
+				element: document.getElementById("aplayer32"),
 				narrow: false,
 				autoplay: false,
 				showlrc: 0,
@@ -3036,10 +3036,10 @@
     <entry>
       <title><![CDATA[小厨教你做红烧鱼]]></title>
       <url>http://wangchloe.vip/2017/03/10/life5/</url>
-      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><div id="aplayer34" class="aplayer" style="margin-bottom: 20px;"></div>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><div id="aplayer25" class="aplayer" style="margin-bottom: 20px;"></div>
 		<script>
 			var ap = new APlayer({
-				element: document.getElementById("aplayer34"),
+				element: document.getElementById("aplayer25"),
 				narrow: false,
 				autoplay: false,
 				showlrc: 0,
@@ -3091,10 +3091,10 @@
       <title><![CDATA[每天10个前端知识点：算法与数据结构]]></title>
       <url>http://wangchloe.vip/2017/03/02/blog26/</url>
       <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
-<div id="aplayer18" class="aplayer" style="margin-bottom: 20px;"></div>
+<div id="aplayer31" class="aplayer" style="margin-bottom: 20px;"></div>
 		<script>
 			var ap = new APlayer({
-				element: document.getElementById("aplayer18"),
+				element: document.getElementById("aplayer31"),
 				narrow: false,
 				autoplay: false,
 				showlrc: 0,
@@ -3192,10 +3192,10 @@
       <title><![CDATA[每天10个前端知识点：面向对象(下)]]></title>
       <url>http://wangchloe.vip/2017/02/28/blog25/</url>
       <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
-<div id="aplayer17" class="aplayer" style="margin-bottom: 20px;"></div>
+<div id="aplayer11" class="aplayer" style="margin-bottom: 20px;"></div>
 		<script>
 			var ap = new APlayer({
-				element: document.getElementById("aplayer17"),
+				element: document.getElementById("aplayer11"),
 				narrow: false,
 				autoplay: false,
 				showlrc: 0,
@@ -3313,10 +3313,10 @@
       <title><![CDATA[每天10个前端知识点：面向对象(中)]]></title>
       <url>http://wangchloe.vip/2017/02/27/blog24/</url>
       <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
-<div id="aplayer16" class="aplayer" style="margin-bottom: 20px;"></div>
+<div id="aplayer30" class="aplayer" style="margin-bottom: 20px;"></div>
 		<script>
 			var ap = new APlayer({
-				element: document.getElementById("aplayer16"),
+				element: document.getElementById("aplayer30"),
 				narrow: false,
 				autoplay: false,
 				showlrc: 0,
@@ -3439,10 +3439,10 @@
       <title><![CDATA[每天10个前端知识点：面向对象(上)]]></title>
       <url>http://wangchloe.vip/2017/02/26/blog23/</url>
       <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
-<div id="aplayer15" class="aplayer" style="margin-bottom: 20px;"></div>
+<div id="aplayer10" class="aplayer" style="margin-bottom: 20px;"></div>
 		<script>
 			var ap = new APlayer({
-				element: document.getElementById("aplayer15"),
+				element: document.getElementById("aplayer10"),
 				narrow: false,
 				autoplay: false,
 				showlrc: 0,
@@ -3560,10 +3560,10 @@
       <title><![CDATA[每天10个前端知识点：性能优化篇]]></title>
       <url>http://wangchloe.vip/2017/02/24/blog22/</url>
       <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
-<div id="aplayer14" class="aplayer" style="margin-bottom: 20px;"></div>
+<div id="aplayer29" class="aplayer" style="margin-bottom: 20px;"></div>
 		<script>
 			var ap = new APlayer({
-				element: document.getElementById("aplayer14"),
+				element: document.getElementById("aplayer29"),
 				narrow: false,
 				autoplay: false,
 				showlrc: 0,
@@ -3869,10 +3869,10 @@
       <title><![CDATA[每天10个前端知识点：布局大全]]></title>
       <url>http://wangchloe.vip/2017/02/20/blog21/</url>
       <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
-<div id="aplayer13" class="aplayer" style="margin-bottom: 20px;"></div>
+<div id="aplayer34" class="aplayer" style="margin-bottom: 20px;"></div>
 		<script>
 			var ap = new APlayer({
-				element: document.getElementById("aplayer13"),
+				element: document.getElementById("aplayer34"),
 				narrow: false,
 				autoplay: false,
 				showlrc: 0,
@@ -4085,10 +4085,10 @@
       <title><![CDATA[每天10个前端知识点：正则应用篇]]></title>
       <url>http://wangchloe.vip/2017/02/18/blog20/</url>
       <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
-<div id="aplayer12" class="aplayer" style="margin-bottom: 20px;"></div>
+<div id="aplayer8" class="aplayer" style="margin-bottom: 20px;"></div>
 		<script>
 			var ap = new APlayer({
-				element: document.getElementById("aplayer12"),
+				element: document.getElementById("aplayer8"),
 				narrow: false,
 				autoplay: false,
 				showlrc: 0,
@@ -4158,10 +4158,10 @@
       <title><![CDATA[每天10个前端知识点：正则表达式]]></title>
       <url>http://wangchloe.vip/2017/02/17/blog19/</url>
       <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
-<div id="aplayer10" class="aplayer" style="margin-bottom: 20px;"></div>
+<div id="aplayer7" class="aplayer" style="margin-bottom: 20px;"></div>
 		<script>
 			var ap = new APlayer({
-				element: document.getElementById("aplayer10"),
+				element: document.getElementById("aplayer7"),
 				narrow: false,
 				autoplay: false,
 				showlrc: 0,
@@ -4297,10 +4297,10 @@
       <title><![CDATA[每天10个前端知识点：jQuery(下)]]></title>
       <url>http://wangchloe.vip/2017/02/16/blog18/</url>
       <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
-<div id="aplayer9" class="aplayer" style="margin-bottom: 20px;"></div>
+<div id="aplayer6" class="aplayer" style="margin-bottom: 20px;"></div>
 		<script>
 			var ap = new APlayer({
-				element: document.getElementById("aplayer9"),
+				element: document.getElementById("aplayer6"),
 				narrow: false,
 				autoplay: false,
 				showlrc: 0,
@@ -4433,10 +4433,10 @@
       <title><![CDATA[每天10个前端知识点：jQuery(上)]]></title>
       <url>http://wangchloe.vip/2017/02/15/blog17/</url>
       <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
-<div id="aplayer8" class="aplayer" style="margin-bottom: 20px;"></div>
+<div id="aplayer5" class="aplayer" style="margin-bottom: 20px;"></div>
 		<script>
 			var ap = new APlayer({
-				element: document.getElementById("aplayer8"),
+				element: document.getElementById("aplayer5"),
 				narrow: false,
 				autoplay: false,
 				showlrc: 0,
@@ -4682,10 +4682,10 @@
       <title><![CDATA[每天10个前端知识点：ajax && jsonp]]></title>
       <url>http://wangchloe.vip/2017/02/13/blog16/</url>
       <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
-<div id="aplayer7" class="aplayer" style="margin-bottom: 20px;"></div>
+<div id="aplayer28" class="aplayer" style="margin-bottom: 20px;"></div>
 		<script>
 			var ap = new APlayer({
-				element: document.getElementById("aplayer7"),
+				element: document.getElementById("aplayer28"),
 				narrow: false,
 				autoplay: false,
 				showlrc: 0,
@@ -4793,10 +4793,10 @@
       <title><![CDATA[每天10个前端知识点：原生篇(6)]]></title>
       <url>http://wangchloe.vip/2017/02/07/blog15/</url>
       <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
-<div id="aplayer6" class="aplayer" style="margin-bottom: 20px;"></div>
+<div id="aplayer4" class="aplayer" style="margin-bottom: 20px;"></div>
 		<script>
 			var ap = new APlayer({
-				element: document.getElementById("aplayer6"),
+				element: document.getElementById("aplayer4"),
 				narrow: false,
 				autoplay: false,
 				showlrc: 0,
@@ -4928,10 +4928,10 @@
       <title><![CDATA[每天10个前端知识点：命名规范]]></title>
       <url>http://wangchloe.vip/2017/02/05/blog14/</url>
       <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
-<div id="aplayer5" class="aplayer" style="margin-bottom: 20px;"></div>
+<div id="aplayer3" class="aplayer" style="margin-bottom: 20px;"></div>
 		<script>
 			var ap = new APlayer({
-				element: document.getElementById("aplayer5"),
+				element: document.getElementById("aplayer3"),
 				narrow: false,
 				autoplay: false,
 				showlrc: 0,
@@ -4989,10 +4989,10 @@
       <title><![CDATA[每天10个前端知识点：运动框架应用篇(下)]]></title>
       <url>http://wangchloe.vip/2017/02/04/blog13/</url>
       <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
-<div id="aplayer4" class="aplayer" style="margin-bottom: 20px;"></div>
+<div id="aplayer27" class="aplayer" style="margin-bottom: 20px;"></div>
 		<script>
 			var ap = new APlayer({
-				element: document.getElementById("aplayer4"),
+				element: document.getElementById("aplayer27"),
 				narrow: false,
 				autoplay: false,
 				showlrc: 0,
@@ -5074,10 +5074,10 @@
       <title><![CDATA[每天10个前端知识点：运动框架应用篇(中)]]></title>
       <url>http://wangchloe.vip/2017/02/03/blog12/</url>
       <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
-<div id="aplayer3" class="aplayer" style="margin-bottom: 20px;"></div>
+<div id="aplayer26" class="aplayer" style="margin-bottom: 20px;"></div>
 		<script>
 			var ap = new APlayer({
-				element: document.getElementById("aplayer3"),
+				element: document.getElementById("aplayer26"),
 				narrow: false,
 				autoplay: false,
 				showlrc: 0,
@@ -5280,10 +5280,10 @@
       <title><![CDATA[每天10个前端知识点：事件篇]]></title>
       <url>http://wangchloe.vip/2017/01/23/blog9/</url>
       <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
-<div id="aplayer29" class="aplayer" style="margin-bottom: 20px;"></div>
+<div id="aplayer19" class="aplayer" style="margin-bottom: 20px;"></div>
 		<script>
 			var ap = new APlayer({
-				element: document.getElementById("aplayer29"),
+				element: document.getElementById("aplayer19"),
 				narrow: false,
 				autoplay: false,
 				showlrc: 0,
@@ -5468,10 +5468,10 @@
       <title><![CDATA[每天10个前端知识点：各种宽高距离篇]]></title>
       <url>http://wangchloe.vip/2017/01/20/blog8/</url>
       <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
-<div id="aplayer28" class="aplayer" style="margin-bottom: 20px;"></div>
+<div id="aplayer20" class="aplayer" style="margin-bottom: 20px;"></div>
 		<script>
 			var ap = new APlayer({
-				element: document.getElementById("aplayer28"),
+				element: document.getElementById("aplayer20"),
 				narrow: false,
 				autoplay: false,
 				showlrc: 0,
@@ -5571,10 +5571,10 @@
       <title><![CDATA[每天10个前端知识点：js组成篇]]></title>
       <url>http://wangchloe.vip/2017/01/18/blog7/</url>
       <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
-<div id="aplayer27" class="aplayer" style="margin-bottom: 20px;"></div>
+<div id="aplayer18" class="aplayer" style="margin-bottom: 20px;"></div>
 		<script>
 			var ap = new APlayer({
-				element: document.getElementById("aplayer27"),
+				element: document.getElementById("aplayer18"),
 				narrow: false,
 				autoplay: false,
 				showlrc: 0,
@@ -5734,10 +5734,10 @@ IE：提示
       <title><![CDATA[每天10个前端知识点：原生篇(5)]]></title>
       <url>http://wangchloe.vip/2017/01/16/blog6/</url>
       <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
-<div id="aplayer26" class="aplayer" style="margin-bottom: 20px;"></div>
+<div id="aplayer17" class="aplayer" style="margin-bottom: 20px;"></div>
 		<script>
 			var ap = new APlayer({
-				element: document.getElementById("aplayer26"),
+				element: document.getElementById("aplayer17"),
 				narrow: false,
 				autoplay: false,
 				showlrc: 0,
@@ -5837,10 +5837,10 @@ IE：提示
       <title><![CDATA[每天10个前端知识点：数组应用篇]]></title>
       <url>http://wangchloe.vip/2017/01/15/blog5/</url>
       <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
-<div id="aplayer25" class="aplayer" style="margin-bottom: 20px;"></div>
+<div id="aplayer16" class="aplayer" style="margin-bottom: 20px;"></div>
 		<script>
 			var ap = new APlayer({
-				element: document.getElementById("aplayer25"),
+				element: document.getElementById("aplayer16"),
 				narrow: false,
 				autoplay: false,
 				showlrc: 0,
@@ -5907,10 +5907,10 @@ IE：提示
     <entry>
       <title><![CDATA[小厨教你做叉烧]]></title>
       <url>http://wangchloe.vip/2017/01/15/life1/</url>
-      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><div id="aplayer30" class="aplayer" style="margin-bottom: 20px;"></div>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><div id="aplayer21" class="aplayer" style="margin-bottom: 20px;"></div>
 		<script>
 			var ap = new APlayer({
-				element: document.getElementById("aplayer30"),
+				element: document.getElementById("aplayer21"),
 				narrow: false,
 				autoplay: false,
 				showlrc: 0,
@@ -5948,10 +5948,10 @@ IE：提示
       <title><![CDATA[每天10个前端知识点：原生篇(4)]]></title>
       <url>http://wangchloe.vip/2017/01/14/blog4/</url>
       <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
-<div id="aplayer24" class="aplayer" style="margin-bottom: 20px;"></div>
+<div id="aplayer15" class="aplayer" style="margin-bottom: 20px;"></div>
 		<script>
 			var ap = new APlayer({
-				element: document.getElementById("aplayer24"),
+				element: document.getElementById("aplayer15"),
 				narrow: false,
 				autoplay: false,
 				showlrc: 0,
@@ -6159,10 +6159,10 @@ IE：提示
       <title><![CDATA[每天10个前端知识点：原生篇(3)]]></title>
       <url>http://wangchloe.vip/2017/01/13/blog3/</url>
       <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
-<div id="aplayer21" class="aplayer" style="margin-bottom: 20px;"></div>
+<div id="aplayer12" class="aplayer" style="margin-bottom: 20px;"></div>
 		<script>
 			var ap = new APlayer({
-				element: document.getElementById("aplayer21"),
+				element: document.getElementById("aplayer12"),
 				narrow: false,
 				autoplay: false,
 				showlrc: 0,
@@ -6279,10 +6279,10 @@ IE：提示
       <title><![CDATA[每天10个前端知识点：原生篇(2)]]></title>
       <url>http://wangchloe.vip/2017/01/12/blog2/</url>
       <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
-<div id="aplayer11" class="aplayer" style="margin-bottom: 20px;"></div>
+<div id="aplayer9" class="aplayer" style="margin-bottom: 20px;"></div>
 		<script>
 			var ap = new APlayer({
-				element: document.getElementById("aplayer11"),
+				element: document.getElementById("aplayer9"),
 				narrow: false,
 				autoplay: false,
 				showlrc: 0,
@@ -6547,10 +6547,10 @@ IE：提示
     <entry>
       <title><![CDATA[最美上师大]]></title>
       <url>http://wangchloe.vip/2017/01/01/life3/</url>
-      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><div id="aplayer32" class="aplayer" style="margin-bottom: 20px;"></div>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><div id="aplayer23" class="aplayer" style="margin-bottom: 20px;"></div>
 		<script>
 			var ap = new APlayer({
-				element: document.getElementById("aplayer32"),
+				element: document.getElementById("aplayer23"),
 				narrow: false,
 				autoplay: false,
 				showlrc: 0,
@@ -6583,12 +6583,54 @@ IE：提示
     </entry>
     
     <entry>
-      <title><![CDATA[烹饪作品集]]></title>
-      <url>http://wangchloe.vip/2017/01/01/life2/</url>
-      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><div id="aplayer31" class="aplayer" style="margin-bottom: 20px;"></div>
+      <title><![CDATA[一言不合就开吃]]></title>
+      <url>http://wangchloe.vip/2017/01/01/life4/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><div id="aplayer24" class="aplayer" style="margin-bottom: 20px;"></div>
 		<script>
 			var ap = new APlayer({
-				element: document.getElementById("aplayer31"),
+				element: document.getElementById("aplayer24"),
+				narrow: false,
+				autoplay: false,
+				showlrc: 0,
+				music: {
+					title: "Schnappi",
+					author: "Joy Gruttmann",
+					url: "http://ojvx9eehr.bkt.clouddn.com/Joy%20Gruttmann%20-%20Schnappi.mp3",
+					pic: "",
+				}
+			});
+			window.aplayers || (window.aplayers = []);
+			window.aplayers.push(ap);
+		</script>
+<p><strong>Lingo - 芝士汉堡  (芝士控，吃多了有些齁)</strong><br><img src="http://ojvx9eehr.bkt.clouddn.com/%E5%90%83%E5%90%83%E5%90%83%E5%B0%8F%E5%88%86%E9%98%9FIMG_2483.JPG" alt="" width="400px" height="400px"></p>
+<a id="more"></a>
+<p><strong>西安面馆 - 油泼面</strong><br><img src="http://ojvx9eehr.bkt.clouddn.com/%E5%90%83%E5%90%83%E5%90%83%E5%B0%8F%E5%88%86%E9%98%9FIMG_1515.JPG" alt="" width="400px" height="400px"></p>
+<p><strong>阿扎芝心年糕 - 芝心年糕火锅  (芝士控永远都把持不住哇)</strong><br><img src="http://ojvx9eehr.bkt.clouddn.com/%E5%90%83%E5%90%83%E5%90%83%E5%B0%8F%E5%88%86%E9%98%9FIMG_1026.JPG" alt="" width="400px" height="400px"></p>
+<p><strong>外婆家 (虽然外婆家的菜品没那么好，但很喜欢他家的餐具，很有外婆的味道)</strong><br><img src="http://ojvx9eehr.bkt.clouddn.com/%E5%90%83%E5%90%83%E5%90%83%E5%B0%8F%E5%88%86%E9%98%9FIMG_0364.JPG" alt="" width="600px" height="400px"></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 你好，陌生人 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 吃吃吃小分队 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[烹饪作品集]]></title>
+      <url>http://wangchloe.vip/2017/01/01/life2/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><div id="aplayer22" class="aplayer" style="margin-bottom: 20px;"></div>
+		<script>
+			var ap = new APlayer({
+				element: document.getElementById("aplayer22"),
 				narrow: false,
 				autoplay: false,
 				showlrc: 0,
@@ -6630,48 +6672,6 @@ IE：提示
         <tags>
             
             <tag> 爱做饭 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[一言不合就开吃]]></title>
-      <url>http://wangchloe.vip/2017/01/01/life4/</url>
-      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><div id="aplayer33" class="aplayer" style="margin-bottom: 20px;"></div>
-		<script>
-			var ap = new APlayer({
-				element: document.getElementById("aplayer33"),
-				narrow: false,
-				autoplay: false,
-				showlrc: 0,
-				music: {
-					title: "Schnappi",
-					author: "Joy Gruttmann",
-					url: "http://ojvx9eehr.bkt.clouddn.com/Joy%20Gruttmann%20-%20Schnappi.mp3",
-					pic: "",
-				}
-			});
-			window.aplayers || (window.aplayers = []);
-			window.aplayers.push(ap);
-		</script>
-<p><strong>Lingo - 芝士汉堡  (芝士控，吃多了有些齁)</strong><br><img src="http://ojvx9eehr.bkt.clouddn.com/%E5%90%83%E5%90%83%E5%90%83%E5%B0%8F%E5%88%86%E9%98%9FIMG_2483.JPG" alt="" width="400px" height="400px"></p>
-<a id="more"></a>
-<p><strong>西安面馆 - 油泼面</strong><br><img src="http://ojvx9eehr.bkt.clouddn.com/%E5%90%83%E5%90%83%E5%90%83%E5%B0%8F%E5%88%86%E9%98%9FIMG_1515.JPG" alt="" width="400px" height="400px"></p>
-<p><strong>阿扎芝心年糕 - 芝心年糕火锅  (芝士控永远都把持不住哇)</strong><br><img src="http://ojvx9eehr.bkt.clouddn.com/%E5%90%83%E5%90%83%E5%90%83%E5%B0%8F%E5%88%86%E9%98%9FIMG_1026.JPG" alt="" width="400px" height="400px"></p>
-<p><strong>外婆家 (虽然外婆家的菜品没那么好，但很喜欢他家的餐具，很有外婆的味道)</strong><br><img src="http://ojvx9eehr.bkt.clouddn.com/%E5%90%83%E5%90%83%E5%90%83%E5%B0%8F%E5%88%86%E9%98%9FIMG_0364.JPG" alt="" width="600px" height="400px"></p>
-]]></content>
-      
-        <categories>
-            
-            <category> 你好，陌生人 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 吃吃吃小分队 </tag>
             
         </tags>
         
