@@ -50,15 +50,15 @@ reward_wording: '感谢你对Chloe的支持！'
 # 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg
 #alipay: 
 # 微信二维码图片地址
-weixin: "http://ojvx9eehr.bkt.clouddn.com/%E5%A4%A7%E5%9B%BE.jpg"
+weixin: "http://ww1.sinaimg.cn/large/006xNtaHgy1g3i7y9m94ej325s0m80wr.jpg"
 
 # Miscellaneous
 baidu_analytics: '124ace5bce369d50a530581f3c68305f'
 google_analytics: ''
-favicon: "http://ojvx9eehr.bkt.clouddn.com/logo.ico"
+favicon: "http://wx4.sinaimg.cn/large/006xNtaHgy1g3i82v1odkj300w00w0si.jpg"
 
 #你的头像url
-avatar: "http://ojvx9eehr.bkt.clouddn.com/logo.jpg"
+avatar: "http://ww1.sinaimg.cn/large/006xNtaHgy1g3i7xu57u3j30c80c874m.jpg"
 
 #是否开启分享
 share_jia: true
