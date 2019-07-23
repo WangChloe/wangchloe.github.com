@@ -27,7 +27,7 @@ rss: /atom.xml
 # 是否需要修改 root 路径
 # 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，
 # 请将您的 url 设为 http://yoursite.com/blog 并把 root 设为 /blog/。
-root: 
+root: /
 
 # Content
 
@@ -50,7 +50,7 @@ reward_wording: '感谢你对Chloe的支持！'
 # 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg
 #alipay: 
 # 微信二维码图片地址
-weixin: "http://ww1.sinaimg.cn/large/006xNtaHgy1g3i7y9m94ej325s0m80wr.jpg"
+weixin: "http://ww1.sinaimg.cn/large/006tNc79gy1g59sd1aky1j325s0m80xf.jpg"
 
 # Miscellaneous
 baidu_analytics: '124ace5bce369d50a530581f3c68305f'
@@ -65,7 +65,7 @@ share_jia: true
 
 #是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key
 #若使用disqus，请在博客config文件中填写disqus_shortname，并关闭多说评论
-duoshuo: wangchloe
+duoshuo: false
 
 # 样式定制 - 一般不需要修改，除非有很强的定制欲望…
 style:
@@ -95,3 +95,9 @@ smart_menu:
 aboutme: 
 
 fancybox: true
+
+# 网易云音乐插件
+music:
+  enable: true
+  id: 865632948  # 网易云分享的ID
+  autoplay: false  # 是否开启自动播放

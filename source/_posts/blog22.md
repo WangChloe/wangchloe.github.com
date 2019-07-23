@@ -8,7 +8,7 @@ tags: [js, css, 性能优化]
 
 以下内容若有问题烦请即时告知我予以修改，以免误导更多人。
 
-{% aplayer "从你的全世界路过 (插曲扒带版本)" "秋名山的老司基" "http://ojvx9eehr.bkt.clouddn.com/%E7%A7%8B%E5%90%8D%E5%B1%B1%E7%9A%84%E8%80%81%E5%8F%B8%E5%9F%BA%20-%20%E4%BB%8E%E4%BD%A0%E7%9A%84%E5%85%A8%E4%B8%96%E7%95%8C%E8%B7%AF%E8%BF%87%20%28%E6%8F%92%E6%9B%B2%E6%89%92%E5%B8%A6%E7%89%88%E6%9C%AC%29.mp3" %}
+
 
 ---
 
@@ -310,4 +310,4 @@ F0=0，F1=1，Fn=F(n-1)+F(n-2)（n>=2，n∈N*）
 
 ---
 更多内容可以订阅本人微信公众号，一起开启前端小白进阶的世界！
-![微信公众号：无媛无故](http://upload-images.jianshu.io/upload_images/2125655-f7a4736d8601eb14.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![微信公众号：无媛无故](http://ww1.sinaimg.cn/large/006tNc79gy1g59sd1aky1j325s0m80xf.jpg)

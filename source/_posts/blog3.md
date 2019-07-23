@@ -8,7 +8,7 @@ tags: [js]
 
 以下内容若有问题烦请即时告知我予以修改，以免误导更多人。
 
-{% aplayer "烦恼歌" "张学友" "http://ojvx9eehr.bkt.clouddn.com/%20%E5%BC%A0%E5%AD%A6%E5%8F%8B%20-%20%E7%83%A6%E6%81%BC%E6%AD%8C.mp3" %}
+
 
 
 ---
@@ -293,4 +293,4 @@ oBtn.onclick = function() {
 
 ---
 更多内容可以订阅本人微信公众号，一起开启前端小白进阶的世界！
-![微信公众号：无媛无故](http://upload-images.jianshu.io/upload_images/2125655-f7a4736d8601eb14.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![微信公众号：无媛无故](http://ww1.sinaimg.cn/large/006tNc79gy1g59sd1aky1j325s0m80xf.jpg)

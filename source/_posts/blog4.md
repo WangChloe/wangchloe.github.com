@@ -8,7 +8,7 @@ tags: [js]
 
 以下内容若有问题烦请即时告知我予以修改，以免误导更多人。
 
-{% aplayer "苏荷酒吧" "James" "http://ojvx9eehr.bkt.clouddn.com/James%20-%20%E8%8B%8F%E8%8D%B7%E9%85%92%E5%90%A7.mp3" %}
+
 
 
 ---
@@ -273,4 +273,4 @@ json标准格式：{"name":value, "name2":value2, ...}
 
 ---
 更多内容可以订阅本人微信公众号，一起开启前端小白进阶的世界！
-![微信公众号：无媛无故](http://upload-images.jianshu.io/upload_images/2125655-f7a4736d8601eb14.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![微信公众号：无媛无故](http://ww1.sinaimg.cn/large/006tNc79gy1g59sd1aky1j325s0m80xf.jpg)

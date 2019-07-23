@@ -8,7 +8,7 @@ tags: [js]
 
 以下内容若有问题烦请即时告知我予以修改，以免误导更多人。
 
-{% aplayer "你是我最深爱的人" "狮子合唱团" "http://ojvx9eehr.bkt.clouddn.com/music/%E7%8B%AE%E5%AD%90%E5%90%88%E5%94%B1%E5%9B%A2%20-%20%E4%BD%A0%E6%98%AF%E6%88%91%E6%9C%80%E6%B7%B1%E7%88%B1%E7%9A%84%E4%BA%BA.mp3" %}
+
 
 ---
 
@@ -322,4 +322,4 @@ tags: [js]
 
 ---
 更多内容可以订阅本人微信公众号，一起开启前端小白进阶的世界！
-![微信公众号：无媛无故](http://upload-images.jianshu.io/upload_images/2125655-f7a4736d8601eb14.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![微信公众号：无媛无故](http://ww1.sinaimg.cn/large/006tNc79gy1g59sd1aky1j325s0m80xf.jpg)

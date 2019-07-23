@@ -8,7 +8,7 @@ tags: [js]
 
 以下内容若有问题烦请即时告知我予以修改，以免误导更多人。
 
-{% aplayer "爱上鲨鱼的人鱼" "My Girl" "http://ojvx9eehr.bkt.clouddn.com/My%20Girl%20-%20%E7%88%B1%E4%B8%8A%E9%B2%A8%E9%B1%BC%E7%9A%84%E4%BA%BA%E9%B1%BC.mp3" %}
+
 
 
 ---
@@ -87,4 +87,4 @@ tags: [js]
 
 ---
 更多内容可以订阅本人微信公众号，一起开启前端小白进阶的世界！
-![微信公众号：无媛无故](http://upload-images.jianshu.io/upload_images/2125655-f7a4736d8601eb14.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![微信公众号：无媛无故](http://ww1.sinaimg.cn/large/006tNc79gy1g59sd1aky1j325s0m80xf.jpg)

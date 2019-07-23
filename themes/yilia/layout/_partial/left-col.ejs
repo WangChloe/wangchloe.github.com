@@ -1,6 +1,8 @@
 <% var defaultBg = '#4d4d4d'; %>
 <div class="overlay" style="background: <%= theme.style && theme.style.header ? theme.style.header : defaultBg %>"></div>
+
 <div class="intrude-less">
+<!-- 网易云音乐插件 -->
 	<header id="header" class="inner">
 		<a href="<%=theme.root%>" class="profilepic">
 			<img src="<%=theme.avatar%>" class="js-avatar">
@@ -11,7 +13,11 @@
 		<% if (theme.subtitle){ %>
 		<p class="header-subtitle"><%=theme.subtitle%></p>
 		<%}%>
-
+		<% if (theme.music && theme.music.enable){ %>
+    <div style="position:absolute; bottom:-270px; left:auto; width:85%">
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="240" height="52" src="//music.163.com/outchain/player?type=2&id=<%=theme.music.id||1334445174%>&auto=<%=theme.music.autoplay?1:0%>&height=32"></iframe>
+    </div>
+<% } %>
 		<nav class="header-menu">
 			<ul>
 			<% for (var i in theme.menu){ %>

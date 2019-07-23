@@ -5,6 +5,9 @@ categories: 前端札记
 tags: [vue]
 
 ---
+以下内容若有问题烦请即时告知我予以修改，以免误导更多人。
+
+---
 
 - nextTick
 	- es5源码
@@ -568,4 +571,4 @@ updated: function() { // 数据更新之后调用
 
 公众号不发文的时候推送一些我觉得好用的前端网站或者看到的一些问题的解决方案，也更便于大家交流，就酱。
 
-![微信公众号：无媛无故](http://upload-images.jianshu.io/upload_images/2125655-f7a4736d8601eb14.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![微信公众号：无媛无故](http://ww1.sinaimg.cn/large/006tNc79gy1g59sd1aky1j325s0m80xf.jpg)

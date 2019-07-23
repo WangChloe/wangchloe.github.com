@@ -7,12 +7,12 @@ title: 无媛无故 - wangchloe的个人博客
 subtitle: (๑•ᴗ•๑)做一个有记性有温度不掉发的程序媛！
 description: wangchloe的个人博客
 author: Chloe Wang
-language: zh-Hans
+language: zh-CN
 timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://wangchloe.vip
+url: https://wangchloe.vip
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:

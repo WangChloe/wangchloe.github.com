@@ -8,7 +8,7 @@ tags: [js]
 
 以下内容若有问题烦请即时告知我予以修改，以免误导更多人。
 
-{% aplayer "透明人间" "秋麦家瑜" "http://ojvx9eehr.bkt.clouddn.com/music/%E9%BA%A6%E5%AE%B6%E7%91%9C%20-%20%E9%80%8F%E6%98%8E%E4%BA%BA%E9%97%B4.mp3" %}
+
 
 ---
 
@@ -279,4 +279,4 @@ IE只支持事件冒泡，不支持事件捕获。
 
 ---
 更多内容可以订阅本人微信公众号，一起开启前端小白进阶的世界！
-![微信公众号：无媛无故](http://upload-images.jianshu.io/upload_images/2125655-f7a4736d8601eb14.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![微信公众号：无媛无故](http://ww1.sinaimg.cn/large/006tNc79gy1g59sd1aky1j325s0m80xf.jpg)

@@ -8,7 +8,7 @@ tags: [js]
 
 以下内容若有问题烦请即时告知我予以修改，以免误导更多人。
 
-{% aplayer "你就不要想起我" "赵骏" "http://ojvx9eehr.bkt.clouddn.com/%E8%B5%B5%E9%AA%8F%20-%20%E4%BD%A0%E5%B0%B1%E4%B8%8D%E8%A6%81%E6%83%B3%E8%B5%B7%E6%88%91%28Live%29.mp3" %}
+
 
 ---
 *本次内容是一些比较零散的知识点，有坑慎入，踩坑快乐！*
@@ -196,4 +196,4 @@ GB2312：中文占2个字节
 
 ---
 更多内容可以订阅本人微信公众号，一起开启前端小白进阶的世界！
-![微信公众号：无媛无故](http://upload-images.jianshu.io/upload_images/2125655-f7a4736d8601eb14.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![微信公众号：无媛无故](http://ww1.sinaimg.cn/large/006tNc79gy1g59sd1aky1j325s0m80xf.jpg)

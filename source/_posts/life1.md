@@ -1,24 +1,19 @@
 ---
-title: 小厨教你做叉烧
-date: 2017-01-15 03:12:48
+title: 小厨教你做红烧鱼
+date: 2017-03-10 03:12:48
 categories: 你好，陌生人
 tags: [爱做饭]
 
 ---
 
-{% aplayer "Grace" "Laura Story" "http://ojvx9eehr.bkt.clouddn.com/Laura%20Story%20-%20Grace.mp3" %}
 
-
-<img src="http://ojvx9eehr.bkt.clouddn.com/%E7%83%B9%E9%A5%AA%E4%BD%9C%E5%93%81%E9%9B%86IMG_2135%2820161218-021801%29.jpg" alt="" width="400px" height="300px">
+有人不服我的鱼头，来来来，前端技术比不过做饭我还是有信心的！
 
 <!-- more -->
 
-<img src="http://ojvx9eehr.bkt.clouddn.com/IMG_2471.JPG" alt="" width="400px" height="600px">
-<img src="http://ojvx9eehr.bkt.clouddn.com/IMG_2472.JPG" alt="" width="400px" height="600px">
-<img src="http://ojvx9eehr.bkt.clouddn.com/IMG_2473.JPG" alt="" width="400px" height="600px">
-<img src="http://ojvx9eehr.bkt.clouddn.com/IMG_2474.JPG" alt="" width="400px" height="600px">
-<img src="http://ojvx9eehr.bkt.clouddn.com/IMG_2475.JPG" alt="" width="400px" height="600px">
-<img src="http://ojvx9eehr.bkt.clouddn.com/IMG_2476.JPG" alt="" width="400px" height="600px">
-<img src="http://ojvx9eehr.bkt.clouddn.com/IMG_2477.JPG" alt="" width="400px" height="600px">
-<img src="http://ojvx9eehr.bkt.clouddn.com/IMG_2478.JPG" alt="" width="400px" height="600px">
-<img src="http://ojvx9eehr.bkt.clouddn.com/IMG_2479.JPG" alt="" width="400px" height="600px">
+[无媛无故-小厨教你做红烧鱼](https://www.jianshu.com/p/fee6fee5e70e)
+
+
+---
+更多内容可以订阅本人微信公众号，一起开启前端小白进阶的世界！
+![微信公众号：无媛无故](http://ww1.sinaimg.cn/large/006tNc79gy1g59sd1aky1j325s0m80xf.jpg)
