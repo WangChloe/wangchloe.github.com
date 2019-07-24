@@ -173,20 +173,20 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-blog2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-blog15" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/12/blog2/">每天10个前端知识点：原生篇(2)</a>
+      <a class="article-title" href="/2017/02/07/blog15/">每天10个前端知识点：原生篇(6)</a>
     </h1>
   
 
         
-        <a href="/2017/01/12/blog2/" class="archive-article-date">
-  	<time datetime="2017-01-12T13:00:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-12</time>
+        <a href="/2017/02/07/blog15/" class="archive-article-date">
+  	<time datetime="2017-02-06T19:27:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-07</time>
 </a>
         
       </header>
@@ -195,18 +195,15 @@ var _hmt = _hmt || [];
       
         <p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
 <hr>
-<p><em>本次内容主要关于js事件基础以及DOM操作元素。</em></p>
+<p><em>本次内容：cookie、Require、数据交互前导</em></p>
 <hr>
-<h2 id="1-js操作元素属性"><a href="#1-js操作元素属性" class="headerlink" title="1. js操作元素属性"></a>1. js操作元素属性</h2><ul>
-<li><strong>.</strong> 属性操作符(不可以接收变量)</li>
-<li><strong>[]</strong> 中括号可以操作属性也可以接收变量</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">setValue</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="comment">//省略获取元素oBtn, oBtn2的伪代码</span></span><br><span class="line">		oBtn.value = <span class="string">'bbb'</span>;</span><br><span class="line">		oBtn2[<span class="string">'value'</span>] = <span class="string">'bbb'</span>;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>凡是<strong>.</strong> 出现的地方都可以用中括号替代</p>
-</blockquote>
+<h2 id="1-cookie"><a href="#1-cookie" class="headerlink" title="1. cookie"></a>1. cookie</h2><p><strong>数据类型：string</strong></p>
+<ol>
+<li>需在服务器环境中</li>
+<li>不安全</li>
+</ol>
         
-          <a class="article-more-a" href="/2017/01/12/blog2/#more">more >></a>
+          <a class="article-more-a" href="/2017/02/07/blog15/#more">more >></a>
         
       
 
@@ -241,7 +238,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/01/12/blog2/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/02/07/blog15/">展开全文 >></a>
         </p>
       
 
@@ -262,20 +259,20 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-blog1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-blog14" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/11/blog1/">每天10个前端知识点：原生篇(1)</a>
+      <a class="article-title" href="/2017/02/05/blog14/">每天10个前端知识点：命名规范</a>
     </h1>
   
 
         
-        <a href="/2017/01/11/blog1/" class="archive-article-date">
-  	<time datetime="2017-01-10T19:27:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-11</time>
+        <a href="/2017/02/05/blog14/" class="archive-article-date">
+  	<time datetime="2017-02-04T19:27:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-05</time>
 </a>
         
       </header>
@@ -284,17 +281,350 @@ var _hmt = _hmt || [];
       
         <p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
 <hr>
-<p><em>本次内容主要关于js数据类型及变量命名。</em></p>
-<hr>
-<h2 id="1-js六大数据类型"><a href="#1-js六大数据类型" class="headerlink" title="1. js六大数据类型"></a>1. js六大数据类型</h2><blockquote>
-<p>null并非typeof出来的类型，不过由于null不可再分，所以将其归于基本数据类型之中。</p>
-</blockquote>
-<blockquote>
-<p>typeof类型：undefined、boolean、string、number、object、function</p>
-</blockquote>
-<p><strong>以下是根据ECMAScript标准的数据类型分类</strong></p>
+<h2 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h2><h3 id="Reset-css"><a href="#Reset-css" class="headerlink" title="Reset.css"></a>Reset.css</h3><p><a href="http://www.zhangxinxu.com/wordpress/2010/08/html5-css-reset/" target="_blank" rel="noopener">张鑫旭-HTML5 css reset</a></p>
+<p><a href="http://www.cnblogs.com/hnyei/archive/2011/10/04/2198779.html" target="_blank" rel="noopener">目前比较全的CSS重设(reset)方法总结</a></p>
         
-          <a class="article-more-a" href="/2017/01/11/blog1/#more">more >></a>
+          <a class="article-more-a" href="/2017/02/05/blog14/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">前端周边</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/前端札记//" class="article-tag-list-link color5">前端札记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/05/blog14/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-blog13" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/04/blog13/">每天10个前端知识点：运动框架应用篇(下)</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/04/blog13/" class="archive-article-date">
+  	<time datetime="2017-02-03T19:27:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
+<hr>
+<p><em>本次内容：打字依次显示效果、收起当前页放出下一页效果、分块运动、无缝幻灯片、带进度条的无缝幻灯片</em></p>
+<hr>
+<h2 id="10-打字依次显示效果"><a href="#10-打字依次显示效果" class="headerlink" title="10. 打字依次显示效果"></a>10. 打字依次显示效果</h2>
+        
+          <a class="article-more-a" href="/2017/02/04/blog13/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">应用</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/前端札记//" class="article-tag-list-link color5">前端札记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/04/blog13/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-blog12" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/03/blog12/">每天10个前端知识点：运动框架应用篇(中)</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/03/blog12/" class="archive-article-date">
+  	<time datetime="2017-02-02T19:27:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
+<hr>
+<p><em>本次内容：运动时钟、返回顶部、无缝滚动、无缝幻灯片、带进度条的无缝幻灯片</em></p>
+<hr>
+<h2 id="5-运动时钟"><a href="#5-运动时钟" class="headerlink" title="5. 运动时钟"></a>5. 运动时钟</h2>
+        
+          <a class="article-more-a" href="/2017/02/03/blog12/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">应用</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/前端札记//" class="article-tag-list-link color5">前端札记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/03/blog12/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-blog11" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/02/blog11/">每天10个前端知识点：运动框架应用篇(上)</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/02/blog11/" class="archive-article-date">
+  	<time datetime="2017-02-01T19:27:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
+<hr>
+<p><em>本次内容：仿jiaThis分享到、幻灯片、手风琴、多图片中心展开</em></p>
+<hr>
+<h2 id="1-仿jiaThis分享到"><a href="#1-仿jiaThis分享到" class="headerlink" title="1. 仿jiaThis分享到"></a>1. 仿jiaThis分享到</h2><p><a href="http://www.jiathis.com/" target="_blank" rel="noopener">JiaThis - 社会化分享按钮及移动端分享代码提供商！</a></p>
+        
+          <a class="article-more-a" href="/2017/02/02/blog11/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">应用</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/前端札记//" class="article-tag-list-link color5">前端札记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/02/blog11/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-blog10" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/01/blog10/">每天10个前端知识点：原生运动框架</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/01/blog10/" class="archive-article-date">
+  	<time datetime="2017-01-31T19:27:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
+<hr>
+<p><em>原生js编写运动框架，当然部分特性可用CSS3实现。</em></p>
+<hr>
+<h2 id="move-js"><a href="#move-js" class="headerlink" title="move.js"></a>move.js</h2>
+        
+          <a class="article-more-a" href="/2017/02/01/blog10/#more">more >></a>
         
       
 
@@ -329,7 +659,350 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/01/11/blog1/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/02/01/blog10/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-blog9" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/23/blog9/">每天10个前端知识点：事件篇</a>
+    </h1>
+  
+
+        
+        <a href="/2017/01/23/blog9/" class="archive-article-date">
+  	<time datetime="2017-01-22T19:27:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
+<hr>
+<p><em>将事件的冒泡、绑定、捕获、委托及鼠标和键盘的相关事件整理了下。</em></p>
+<hr>
+<h2 id="1-事件对象"><a href="#1-事件对象" class="headerlink" title="1. 事件对象"></a>1. 事件对象</h2><ul>
+<li>event  事件对象(系统自带)<br>*兼容：Chrome IE系<br>FF -&gt; 报错</li>
+<li>ev     事件函数传入参数<br>*兼容：高级浏览器(Chrome、FF、IE9+)<br> IE8- -&gt; undefined</li>
+</ul>
+<p><strong>兼容写法</strong>：var oEvent = ev || event;</p>
+        
+          <a class="article-more-a" href="/2017/01/23/blog9/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/前端札记//" class="article-tag-list-link color5">前端札记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/01/23/blog9/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-blog8" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/20/blog8/">每天10个前端知识点：各种宽高距离篇</a>
+    </h1>
+  
+
+        
+        <a href="/2017/01/20/blog8/" class="archive-article-date">
+  	<time datetime="2017-01-19T19:27:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
+<hr>
+<p><em>这几个宽高距离总是让我辨别不清，索性整合对比了下，方便记忆。</em></p>
+<hr>
+<h2 id="1-滚动距离"><a href="#1-滚动距离" class="headerlink" title="1. 滚动距离"></a>1. 滚动距离</h2><p><strong>html简写：document.documentElement</strong></p>
+<ul>
+<li>document.body.scrollTop<br>  兼容：Chrome<br>  其他 -&gt; 0</li>
+<li>document.documentElement.scrollTop<br>  兼容：IE、FF<br>  其他 -&gt; 0</li>
+</ul>
+<p><strong>兼容写法</strong><br>纵向：var scrollT = document.documentElement.scrollTop || document.body.scrollTop;<br>横向：var scrollL = document.documentElement.scrollLeft || document.body.scrollLeft;</p>
+        
+          <a class="article-more-a" href="/2017/01/20/blog8/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/前端札记//" class="article-tag-list-link color5">前端札记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/01/20/blog8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-blog7" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/18/blog7/">每天10个前端知识点：js组成篇</a>
+    </h1>
+  
+
+        
+        <a href="/2017/01/18/blog7/" class="archive-article-date">
+  	<time datetime="2017-01-17T19:27:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
+<hr>
+<p><em>本次内容有关js的三大组成。</em></p>
+<hr>
+<h2 id="1-js实现的组成"><a href="#1-js实现的组成" class="headerlink" title="1. js实现的组成"></a>1. js实现的组成</h2><h3 id="ECMA"><a href="#ECMA" class="headerlink" title="ECMA"></a>ECMA</h3><p>ECMAScript(<strong>js核心</strong>) 提供核心语言功能</p>
+<p>*兼容：完全兼容<br>eg:<br><code>if(){}
+arr.pop();</code></p>
+        
+          <a class="article-more-a" href="/2017/01/18/blog7/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/前端札记//" class="article-tag-list-link color5">前端札记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/01/18/blog7/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-blog6" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/16/blog6/">每天10个前端知识点：原生篇(5)</a>
+    </h1>
+  
+
+        
+        <a href="/2017/01/16/blog6/" class="archive-article-date">
+  	<time datetime="2017-01-15T19:04:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
+<hr>
+<p><em>本次内容是一些比较零散的知识点，有坑慎入，踩坑快乐！</em></p>
+<hr>
+<h2 id="1-select下拉框的相关属性"><a href="#1-select下拉框的相关属性" class="headerlink" title="1. select下拉框的相关属性"></a>1. select下拉框的相关属性</h2><ul>
+<li>选中的索引值<br>oSel.selectedIndex</li>
+<li>获取所有选项<br>oSel.options</li>
+<li>获取选中的选项的文本内容<br>oSel.options[oSel.selectedIndex].innerHTML<br>oSel.options[oSel.selectedIndex].text</li>
+</ul>
+        
+          <a class="article-more-a" href="/2017/01/16/blog6/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/前端札记//" class="article-tag-list-link color5">前端札记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/01/16/blog6/">展开全文 >></a>
         </p>
       
 
@@ -352,7 +1025,7 @@ var _hmt = _hmt || [];
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span>
+      <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/7/">Next &raquo;</a>
     </nav>
   
 
@@ -488,15 +1161,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">杂技</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">杂技</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">目录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">微信</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -512,15 +1189,35 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">微信</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">爱旅游</a>
+                <a href="javascript:void(0)" class="js-tag color4">php</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">项目总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">video.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">特效</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">规范</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">爱做饭</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">爱旅游</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -529,10 +1226,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
             
             <div class="clearfix"></div>
