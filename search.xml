@@ -100,6 +100,65 @@
     </entry>
     
     <entry>
+      <title><![CDATA[那些prototype那些call]]></title>
+      <url>https://wangchloe.vip/2019/05/13/blog46/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
+<hr>
+<p>原型链大法好！</p>
+<a id="more"></a>
+<h3 id="Array-prototype-slice-call-arguments-0-将具有length属性的对象转成数组"><a href="#Array-prototype-slice-call-arguments-0-将具有length属性的对象转成数组" class="headerlink" title="Array.prototype.slice.call(arguments, 0)  将具有length属性的对象转成数组"></a><code>Array.prototype.slice.call(arguments, 0)</code>  将具有length属性的对象转成数组</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="comment">//ES5 中的数组方法slice的底层内部实现</span></span><br><span class="line"><span class="built_in">Array</span>.prototype.slice=<span class="function"><span class="keyword">function</span>(<span class="params">start,end</span>)</span>&#123;  </span><br><span class="line">    <span class="keyword">var</span> result = <span class="keyword">new</span> <span class="built_in">Array</span>(); <span class="comment">//新数组</span></span><br><span class="line">    <span class="keyword">var</span> start = start || <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">var</span> end = end || <span class="keyword">this</span>.length; <span class="comment">//this指向调用的对象，用了call之后，改变this的指向，指向传进来的对象</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=start; i&lt;end; i++)&#123;</span><br><span class="line">        result.push(<span class="keyword">this</span>[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;	<span class="comment">//返回的为一个新的数组</span></span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="comment">// 传入arguments类数组，调用Array.prototype.slice原型方法</span></span><br><span class="line">    <span class="comment">// 并用call()方法，将作用域限定在arguments中</span></span><br><span class="line">    <span class="comment">// 这里Array.prototype就可以理解为arguments</span></span><br><span class="line">    <span class="comment">// 参数0为slice()方法的第一个参数，即开始位置索引，返回整个数组。</span></span><br><span class="line">    <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>, <span class="number">0</span>);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="Object-prototype-toString-call-xxx-检查对象类型"><a href="#Object-prototype-toString-call-xxx-检查对象类型" class="headerlink" title="Object.prototype.toString.call(xxx)  检查对象类型"></a><code>Object.prototype.toString.call(xxx)</code>  检查对象类型</h3><p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1flaq2qoy21j309l06vjsa.jpg" alt="Object.prototype.toString.call"></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> InputValidation = &#123;</span><br><span class="line">    <span class="string">"isNumber"</span>: <span class="function"><span class="keyword">function</span> (<span class="params">intArg</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(intArg) === <span class="string">"[object Number]"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">InputValidation.isNumber(<span class="number">111</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="https://www.cnblogs.com/youhong/p/6209054.html" target="_blank" rel="noopener">为什么用Object.prototype.toString.call(obj)检测对象类型?</a><br>toString为Object的原型方法，而Array 、Function等类型作为Object的实例，都重写了toString方法。不同的对象类型调用toString方法时，根据原型链的知识，调用的是对应的重写之后的toString方法（Function类型返回内容为函数体的字符串，Array类型返回元素组成的字符串…..），而不会去调用Object上原型toString方法（返回对象的具体类型），所以采用obj.toString()不能得到其对象类型，只能将obj转换为字符串类型；因此，在想要得到对象的具体类型时，应该调用Object上原型toString方法。</p>
+</blockquote>
+<hr>
+<p>更多内容可以订阅本人微信公众号，一起开启前端小白进阶的世界！<br><img src="http://ww1.sinaimg.cn/large/006tNc79gy1g59sd1aky1j325s0m80xf.jpg" alt="微信公众号：无媛无故"></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 前端札记 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> js </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[更改微信内分享链接]]></title>
+      <url>https://wangchloe.vip/2019/05/10/blog45/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
+<hr>
+<a id="more"></a>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">wx.ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 分享给朋友</span></span><br><span class="line">    wx.onMenuShareAppMessage(&#123;</span><br><span class="line">        link: shareUrl,</span><br><span class="line">        title: wxFanliConfig.session.title,</span><br><span class="line">        desc: wxFanliConfig.session.desc,</span><br><span class="line">        imgUrl: wxFanliConfig.session.img,</span><br><span class="line">        success: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (wagv.inWeiXin &amp;&amp; <span class="keyword">typeof</span> wagv.inWeiXin[<span class="string">"shareAppSuccess"</span>] == <span class="string">"function"</span>) &#123;</span><br><span class="line">                wagv.inWeiXin[<span class="string">"shareAppSuccess"</span>]();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        fail: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">            alert(<span class="string">'分享失败'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 分享到朋友圈</span></span><br><span class="line">    wx.onMenuShareTimeline(&#123;</span><br><span class="line">        link: shareUrl,</span><br><span class="line">        title: wxFanliConfig.timeline.title,</span><br><span class="line">        desc: wxFanliConfig.timeline.desc,</span><br><span class="line">        imgUrl: wxFanliConfig.timeline.img,</span><br><span class="line">        success: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (wagv.inWeiXin &amp;&amp; <span class="keyword">typeof</span> wagv.inWeiXin[<span class="string">"shareTimelineSuccess"</span>] == <span class="string">"function"</span>) &#123;</span><br><span class="line">                wagv.inWeiXin[<span class="string">"shareTimelineSuccess"</span>]();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        fail: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">            alert(<span class="string">'分享失败'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<hr>
+<p>更多内容可以订阅本人微信公众号，一起开启前端小白进阶的世界！<br><img src="http://ww1.sinaimg.cn/large/006tNc79gy1g59sd1aky1j325s0m80xf.jpg" alt="微信公众号：无媛无故"></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 前端札记 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 微信 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[巴适川渝]]></title>
       <url>https://wangchloe.vip/2019/05/04/life7/</url>
       <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>巴适滴狠！</p>
@@ -120,6 +179,54 @@
         <tags>
             
             <tag> 爱旅游 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Intellij IDEA建立mac下java开发环境]]></title>
+      <url>https://wangchloe.vip/2019/04/05/blog44/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
+<hr>
+<ul>
+<li><code>commond+T</code> 拉取分支</li>
+<li><code>commond+k</code> 提交分枝</li>
+<li><code>shift+shift</code> 全局搜索文件名</li>
+<li><code>control+shift+f</code> 全局搜索内容(.do)</li>
+<li><p><code>command+command</code> maven projects</p>
+<a id="more"></a>
+</li>
+<li><p>文件名 mall.properties 本地查看html效果</p>
+</li>
+<li>文件名 page-config.xml 配置css、js</li>
+<li>新建分支</li>
+</ul>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fm5o3mjyi1j30l10om114.jpg" alt="新建分支"><br><img src="http://ww3.sinaimg.cn/large/006tNc79gy1g5awgmpl9qj30nc0qetgv.jpg" alt="新建分支"></p>
+<blockquote>
+<p>新建分支后更改mall.properties文件内容，增加端口号</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mall.common.api.url=http://service.shzyfl.cn:7101</span><br></pre></td></tr></table></figure>
+<ul>
+<li>端口占用解决方法<br>终端输入占用端口号10100<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsof -i:10100</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>显示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">COMMAND  PID    USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME</span><br><span class="line">java    1372 wangjie   18u  IPv6 0x40969a7cc34a9943      0t0  TCP *:itap-ddtp (LISTEN)</span><br></pre></td></tr></table></figure></p>
+<p>kill该端口进程PID<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kill -9 1372</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>更多内容可以订阅本人微信公众号，一起开启前端小白进阶的世界！<br><img src="http://ww1.sinaimg.cn/large/006tNc79gy1g59sd1aky1j325s0m80xf.jpg" alt="微信公众号：无媛无故"></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 前端札记 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> java </tag>
             
         </tags>
         
