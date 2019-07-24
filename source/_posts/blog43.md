@@ -1,6 +1,6 @@
 ---
 title: NativeApi思考
-date: 2019-04-05 03:27:35
+date: 2019-07-23 03:27:35
 categories: 前端札记
 tags: [webview]
 
@@ -8,7 +8,6 @@ tags: [webview]
 以下内容若有问题烦请即时告知我予以修改，以免误导更多人。
 
 ---
-
 
 
 
@@ -27,16 +26,13 @@ tags: [webview]
 
 "//webapp/js/common/hybridapi/nativefunction.js",
 
-**将一个json对象转换成json字符串，也可以将一个json字符串转换成一个json对象。**
-"//webapp/js/common/json2.js",
-
 ### 以调用Native上传图片组件为例
 
 ```javascript
 <script>
     NS.register("NativeApi");
 
-    // 目前Android webview不支持type=file事件，通过ifanli解决：
+    // 目前Android webview不支持type=file事件，通过协议解决：
     // 定义全局函数用于回调 
     window["nativeTakePhotoCallback"] = function(result, url, ud) {};
 
@@ -50,8 +46,8 @@ tags: [webview]
             callback: "nativeTakePhotoCallback"
         }, options);
 
-        var protocol = "ifanli://{0}/dev/takephoto?cb={1}&w={2}&ud={3}&upload={4}&t={5}"
-            .format(ifanliProtocol,
+        var protocol = "ns://{0}/dev/takephoto?cb={1}&w={2}&ud={3}&upload={4}&t={5}"
+            .format(domain,
                 rebuildCallback(settings.callback),
                 settings.imgMaxWidth,
                 settings.userData,
@@ -84,7 +80,7 @@ tags: [webview]
         var t = cb;
 
         if ($.isFunction(cb)) {
-            t = "fanliHybrid_" + (+new Date());
+            t = "hybrid_" + (+new Date());
             window[t] = function() {
                 // 将具有length属性的对象转成数组
                 cb.apply(null, Array.prototype.slice.call(arguments, 0));
@@ -96,6 +92,8 @@ tags: [webview]
     }
 </script>
 ```
+
+---
 
 - format传入参数实现
 
@@ -131,14 +129,15 @@ tags: [webview]
 
 ```javascript
 <script>
-// array.js slice的内部实现
-function slice(start, end) {
-    var len = ToUint32(this.length),
-        result = [];
-    for (var i = start; i < end; i++) {
+//ES5 中的数组方法slice的底层内部实现
+Array.prototype.slice=function(start,end){
+    var result = new Array(); //新数组
+    var start = start || 0;
+    var end = end || this.length; //this指向调用的对象，用了call之后，改变this的指向，指向传进来的对象
+    for(var i=start; i<end; i++){
         result.push(this[i]);
     }
-    return result;
+    return result;	//返回的为一个新的数组
 }
 </script>
 ```
@@ -215,11 +214,6 @@ js->Native: 通过 shouldOverrideUrlLoading 携带Js的返回值
 （3）Native->js: Native可直接调用Js并获取返回的内容
 
 [连续五篇讲述Hybrid以及JSBridge解决方案](http://www.cnblogs.com/dailc/p/5930231.html)
-
-
-
-
-
 
 
 
