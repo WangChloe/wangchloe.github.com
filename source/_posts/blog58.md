@@ -1,5 +1,5 @@
 ---
-title: 数字速变特效
+title: 数字自增速变特效
 categories: 前端札记
 tags: ['特效', 'js']
 date: 2018-12-11 17:12:06

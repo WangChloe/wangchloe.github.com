@@ -8,6 +8,23 @@ updated: 2019-07-24 14:55:21
 以下内容若有问题烦请即时告知我予以修改，以免误导更多人。
 
 ---
+<!-- MarkdownTOC -->
+
+- 新建页面php代码
+- 清楚页面缓存
+- 判断为空不显示该段
+- rem计算
+- 热区
+- if语句
+- 循环语句
+- 限制输出字数
+- gaea配置
+- ssh跑脚本
+	- 修改品牌开始时间
+	- 修改店铺优惠券开始时间
+	- 修改店铺商品开售时间
+
+<!-- /MarkdownTOC -->
 
 
 <!-- more -->
@@ -66,6 +83,14 @@ xxx
 <include file="$footerls" />
 ```
 
+## 清楚页面缓存
+
+``` html
+<?php
+    C('CSS_JS_TIME', time());
+?>
+```
+
 ## 判断为空不显示该段
 
 ```
@@ -94,6 +119,21 @@ xxx
 
 
 <img class="brand-repacket-icon" src="{$brand.icons.brand_inner_left_icon.pic_url}" style="width:<?php echo $brand['icons']['brand_inner_left_icon']['width']/100; ?>rem; height:<?php echo $brand['icons']['brand_inner_left_icon']['height']/100; ?>rem;" alt="">
+```
+
+## 热区
+``` html
+<div class="nation-more">
+    <volist name="gaea.game_country_hot_link" id="vo">
+    <?php
+    $position = explode(',', $vo['data1']);
+    ?>
+    <a href="{$vo.link}" style="left:{$position[0]/100}rem; top:{$position[1]/100}rem; width:{$position[2]/100}rem; height:{$position[3]/100}rem;"></a>
+    </volist>
+    <volist name="gaea.game_country_hot_img" id="vo">
+    <img class="w100 J_lazyimg" src="http://static2.51fanli.net/common/images/loading/spacer.png" data-original="{$vo.img}" />
+    </volist>
+</div>
 ```
 
 ## if语句

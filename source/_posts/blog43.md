@@ -13,18 +13,14 @@ tags: [webview]
 
 <!-- MarkdownTOC -->
 
-- NativeApi思考
-	- 以调用Native上传图片组件为例
-	- Hybrid通信原理
-		- JS Bridge
+- 以调用Native上传图片组件为例
+- Hybrid通信原理
+    - JS Bridge
 
 <!-- /MarkdownTOC -->
 
 <!-- more -->
 
-## NativeApi思考
-
-"//webapp/js/common/hybridapi/nativefunction.js",
 
 ### 以调用Native上传图片组件为例
 

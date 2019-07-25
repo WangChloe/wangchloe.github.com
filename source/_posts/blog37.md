@@ -1,6 +1,6 @@
 ---
 title: 每天10个前端知识点：杂技
-date: 2017-05-19 03:27:35
+date: 2019-07-20 03:27:35
 categories: 前端札记
 tags: [杂技]
 
@@ -10,13 +10,26 @@ tags: [杂技]
 
 ---
 
+<!-- MarkdownTOC -->
+
 - toString\(\) && valueOf\(\)
 - JSON stringify & parse
-- +new Date\(\)
-- Array.prototype.slice.call\(arguments, 0\) 剖析
-- JS Bridge建立Native与H5间通信
-    - Hybrid通信原理
-    - JS Bridge
+- zepto & jquery区别
+- `xxx.prepend(yyy)`会先删除yyy再移入xxx最前
+- format传入参数实现
+- `+new Date()`
+- `Array.prototype.slice.call(arguments, 0)`剖析
+- `Object.prototype.toString.call(xxx);`
+- 数组或对象的长度
+- 数组循环
+- 微信关闭当前页面
+- 强制刷新
+- 正则获取指定key的value
+- chrome清除缓存、host
+- localStorage判断再次访问是否是当天
+
+<!-- /MarkdownTOC -->
+
 
 <!-- more -->
 
@@ -24,11 +37,11 @@ tags: [杂技]
 
 有些平时碰到的很零碎的东西我就随便插入到这个章节里了。
 
-## 1. toString() && valueOf()
+## toString() && valueOf()
 
-- toString() 把一个逻辑值转换为字符串，并返回结果。
+- `toString()` 把一个逻辑值转换为字符串，并返回结果。
 
-- valueOf()  返回Boolean对象的原始值
+- `valueOf()`  返回Boolean对象的原始值
 
 > **源自知乎**
 这两个方法一般是交由JS去隐式调用，以满足不同的运算情况。
@@ -37,7 +50,6 @@ tags: [杂技]
 在字符串运算里，会优先调用toString()，如alert(c)。
 
 ``` javascript
-<script>
     // 该示例来源于脚本之家
     var bbb = {
         i: 10,
@@ -58,11 +70,9 @@ tags: [杂技]
     alert(Number(bbb)); // 10 valueOf
     alert(bbb == '10'); // true valueOf
     alert(bbb === '10'); // false
-</script>
 ```
 
 ``` javascript
-<script>
     console.log({
         valueOf: function() {
             return 20;
@@ -72,10 +82,9 @@ tags: [杂技]
             return 30;
         }
     });     // 600
-</script>
 ```
 
-## 2. JSON stringify & parse
+## JSON stringify & parse
 
 [json2.js - 引入解决IE7及以下版本JSON未定义问题。](https://github.com/douglascrockford/JSON-js/blob/master/json2.js)
 
@@ -99,134 +108,187 @@ eg: `{a:1,b:2}`  ->  `"{"a":1,"b":2}"`
 ```
 
 ``` javascript
-<script>
-    var oA = document.querySelector('a');
-    console.log(oA.getAttribute('attr1'));  // 13
+var oA = document.querySelector('a');
+console.log(oA.getAttribute('attr1'));  // 13
 
-    oA.setAttribute('attr1', '14');
-    var num = oA.getAttribute('attr1');
+oA.setAttribute('attr1', '14');
+var num = oA.getAttribute('attr1');
 
-    console.log(oA.getAttribute('attr1'));  // 14
-    console.log(typeof number);  // string 直接设置自定义属性只能得到string类型
+console.log(oA.getAttribute('attr1'));  // 14
+console.log(typeof number);  // string 直接设置自定义属性只能得到string类型
 
-    oA.setAttribute('attr1', JSON.stringify({name: 14}));
+oA.setAttribute('attr1', JSON.stringify({name: 14}));
 
-    var num2 = oA.getAttribute('attr1');
+var num2 = oA.getAttribute('attr1');
 
-    console.log(num2);  // {"name": "14"}
-    console.log(JSON.parse(num2));
-    // Object {name: "14"}
-    //     name: "14"
-    //     -> _proto_: Object
+console.log(num2);  // {"name": "14"}
+console.log(JSON.parse(num2));
+// Object {name: "14"}
+//     name: "14"
+//     -> _proto_: Object
 
-    console.log(JSON.parse(num2).name);  // 14
-    console.log(typeof JSON.parse(num2).name);  // number JSON转化得到了真正类型
-</script>
+console.log(JSON.parse(num2).name);  // 14
+console.log(typeof JSON.parse(num2).name);  // number JSON转化得到了真正类型
 ```
 
-## 3. +new Date()
+3. JSON转换 `JSON.parse(JSON.stringify(obj))`
+
+## zepto & jquery区别
+  - zepto没有判断`is(":hidden")`方法
+  - zepto没有`fadeIn`、`fadeOut`方法 
+  - jquery中`visibility:hidden`、 `opacity:0`为可见
+
+
+## `xxx.prepend(yyy)`会先删除yyy再移入xxx最前
+
+
+## format传入参数实现
+
+"//webapp/js/base.js",
+``` javascript
+    String.prototype.format = function () {
+        for (var temS = this, i = 0; i < arguments.length; ++i) {
+            temS = temS.replace(new RegExp("\\{" + i + "\\}", "g"), arguments[i]);
+        }
+        return temS;
+    }
 ```
-<script>
+
+## `+new Date()`
+
+``` javascript
     s = new Date().toString();
     // "Wed May 17 2017 11:00:16 GMT+0800 (中国标准时间)"
 
     t = (+new Date()).toString();
     // "1494990039861"
     // +new Date(); 等同于 new Date().getTime(); 简略写法，得到毫秒
-</script>
 ```
 
-## 4. Array.prototype.slice.call(arguments, 0) 剖析
+
+## `Array.prototype.slice.call(arguments, 0)`剖析
 
 将具有length属性的对象转成数组
 
-```
-<script>
-// array.js slice的内部实现
-function slice(start, end) {
-    var len = ToUint32(this.length),
-        result = [];
-    for (var i = start; i < end; i++) {
+```javascript
+// slice的内部实现
+Array.prototype.slice=function(start,end){  //ES5 中的数组方法slice的底层内部实现
+    var result = new Array(); //新数组
+    var start = start || 0;
+    var end = end || this.length; //this指向调用的对象，用了call之后，改变this的指向，指向传进来的对象
+    for(var i=start; i<end; i++){
         result.push(this[i]);
     }
-    return result;
+    return result;  //返回的为一个新的数组
 }
-</script>
 ```
 
-```
-<script>
+``` javascript
     // 传入arguments类数组，调用Array.prototype.slice原型方法
     // 并用call()方法，将作用域限定在arguments中
     // 这里Array.prototype就可以理解为arguments
     // 参数0为slice()方法的第一个参数，即开始位置索引，返回整个数组。
     Array.prototype.slice.call(arguments, 0);
-</script>
 ```
 
-## 5. JS Bridge建立Native与H5间通信
 
-### Hybrid通信原理
-背景：原生APP开发中有一个webview的组件(Android中是webview,iOS7以下有UIWebview,7以上有WKWebview),这个组件可以加载Html文件。
+## `Object.prototype.toString.call(xxx);`
 
-- IOS
-  - Object-C可直接调用js，只需调用stringByEvaluatingJavaScriptFromString即可，可直接获取js返回值。
-  - js不可直接调用Object-C，利用 shouldStartLoadWithRequest，需拦截每个url，对指定的schema进行拦截做相应的本地方法。
+![Object.prototype.toString.call](https://ws3.sinaimg.cn/large/006tKfTcgy1flaq2qoy21j309l06vjsa.jpg)
 
-- Android
-  - Java可直接调用js，但不可直接获取js返回值。
-  - Java注册addJavascriptInterface 后，js可直接调用Native的接口，并获取Native的返回值。[让Java跟Javascript更加亲密](http://www.alloyteam.com/2013/02/rang-java-gen-javascript-geng-jia-qin-mi/)
-  - 通过 shouldOverrideUrlLoading，也还是拦截Web的所有URL请求来达到通信的目的。
-
-
-**基础通信存在以下问题**
-
-- Android4.2以下,addJavascriptInterface方式有安全漏洞
-
-- iOS7以下,js无法调用Native
-
-### JS Bridge
-
-- url scheme交互方式是一套现有的成熟方案，可以完美兼容各种版本，不存在上述问题。
-
-通过JSBridge(JS和Native通信机制),H5页面可以调用Native的api,Native也可调用H5页面的方法或者通知H5页面回调。
-
-![JSBridge的核心原理](https://dailc.github.io/staticResource/blog/hybrid/jsbridge/img_hybrid_base_jsbridgePrinciple_1.png?_=5931322)
-
-原理：
-（1）初始化创建的一个style.display=none 的iframe,并将iframe.src设置为自有协议，每次js需要与Native通信时，js端主动调用iframe.src即可，Native收到请求通知后，反向调用fetchQueue(可见源码)获取消息内容；若Native需要与js通信，直接调用js，并获取返回值
-
-（2）
-- IOS
-js->Native：js将要发送的消息存放在js端->调用iframe.src，触发通知Native->Native拦截请求，调用js bridge里面的fetchQueue并获取返回的消息内容，处理消息->将需要返回的数据通过直接调用js的方式，让js处理
-
-- Android
-js->Native: 通过 shouldOverrideUrlLoading 携带Js的返回值
-（3）Native->js: Native可直接调用Js并获取返回的内容
-
-
-```
-<script>
-function bridgeApp(protocol) {
-    var iframe = document.createElement("iframe");
-    var iframeStyle = document.createAttribute("style");
-    var iframeSrc = document.createAttribute("src");
-
-    iframeStyle.nodeValue = "display:none;width:0;height:0;";
-    iframeSrc.nodeValue = protocol;
-    iframe.setAttributeNode(iframeStyle);
-    iframe.setAttributeNode(iframeSrc);
-    document.body.appendChild(iframe);
-
-    setTimeout(function() {
-        document.body.removeChild(iframe);
-    }, 250);
+``` javascript
+var InputValidation = {
+    "isNumber": function (intArg) {
+        return Object.prototype.toString.call(intArg) === "[object Number]";
+    }
 }
-</script>
+
+InputValidation.isNumber(111); // true
+```
+
+## 数组或对象的长度
+
+``` javascript
+ codeAccount: function() {
+    if (Object.prototype.isPrototypeOf(this.arrCodes)) {
+        var keyArray = Object.keys(this.arrCodes);
+        return keyArray.length;
+    } else if (Array.prototype.isPrototypeOf(this.arrCodes)) {
+        returnthis.arrCodes.length;
+    } else {
+        return 0;
+    }
+}
+ ```
+ 
+## 数组循环
+ 
+- jq元素数组each循环
+
+``` javascript
+$selector.each(function(index, ele){
+    
+});
+```
+
+- 纯数组each循环
+
+``` javascript
+var arr = ['a', 'b', 'c']
+
+$.each(arr, function(index, ele) {
+   console.log(ele);
+});
 ```
 
 
-[连续五篇讲述Hybrid以及JSBridge解决方案](http://www.cnblogs.com/dailc/p/5930231.html)
+## 微信关闭当前页面
+`WeixinJSBridge.call('closeWindow');`
+
+## 强制刷新
+
+`window.location.href = window.location.href + '&t=' + new Date().getTime();`
+
+## 正则获取指定key的value
+``` javascript
+var className = $selectedLottery[0].className;
+var index = className ? /lottery-unit-(\d+)/.exec(className)[1] : '';
+```
+
+## chrome清除缓存、host
+`chrome://net-internals/#sockets`
+
+## localStorage判断再次访问是否是当天
+
+``` javascript
+toastNews: function() {
+    var nowDate = new Date();
+    // Thu Aug 23 2018 17:29:16 GMT+0800 (中国标准时间)
+    
+    var that = this;
+    // 将上次访问时间放在localstorage中
+    //取上次进入时间，判断如果是同一天的话，不提示，如果是空或者不是同一天则提示
+    var lastEntryTime = localStorage.getItem('ls-time');
+    
+    if (!lastEntryTime || this.getDayTimestamp(lastEntryTime) != this.getDayTimestamp(nowDate)) { //空不存在或者不是同一天
+        localStorage.setItem('ls-time', nowDate);
+        // ...
+    } else {
+        // ...
+    }
+},
+getDayTimestamp: function(date) {
+    var parseDate = new Date(date);
+    var year = parseDate.getFullYear();
+    // new Date('Thu Aug 23 2018 17:29:16 GMT+0800 (中国标准时间)').getFullYear()
+    // 2018
+    
+    var month = parseDate.getMonth();
+    var day = parseDate.getDate();
+
+    return new Date(year,month,day).getTime();
+}
+```
 
 
 ---

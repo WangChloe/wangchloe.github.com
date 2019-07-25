@@ -11,10 +11,10 @@ updated: 2019-06-25 15:34:01
 
 <!-- MarkdownTOC -->
 
-- 1.chrome video不能自动播放
-- 2. videojs暂停后不能播放
-- 3.iOS 10+ 新政策。
-- 4. Refused to create worker from blob
+- chrome video不能自动播放
+- videojs暂停后不能播放
+- iOS 10+ 新政策。
+- Refused to create worker from blob
 
 <!-- /MarkdownTOC -->
 
@@ -22,7 +22,7 @@ updated: 2019-06-25 15:34:01
 
 [video.js使用技巧](https://www.awaimai.com/2053.html)
 
-### 1.chrome video不能自动播放
+### chrome video不能自动播放
 
 - 方法一
 
@@ -35,7 +35,7 @@ updated: 2019-06-25 15:34:01
 
 在使用video标签的过程中，设置静音播放
 
-### 2. videojs暂停后不能播放
+### videojs暂停后不能播放
 
 需使用source配置video资源
 
@@ -72,11 +72,11 @@ updated: 2019-06-25 15:34:01
 
 ```
 
-### 3.iOS 10+ 新政策。
+### iOS 10+ 新政策。
 在省电模式下无法自动播放视频。android任何模式都不能自动播放，只能让用户手动触发
 
 
-### 4. Refused to create worker from blob
+###  Refused to create worker from blob
 
 ![](http://ww3.sinaimg.cn/large/006tNc79gy1g5b2chlepnj30tj01xdgf.jpg)
 

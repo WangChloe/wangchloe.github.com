@@ -54,6 +54,87 @@ swiper = new Swiper('.swiper-container', {
 });
 ```
 
+### swiper曝光问题
+
+- 非懒加载
+
+``` javascript
+<script>
+    function bindSwiper() {
+        var $swMore = $("#J_swiper_more");
+
+        var swiperMore = new Swiper($swMore, {
+            slidesPerView: "auto",
+            spaceBetween: 0,
+            onTouchEnd: function() {
+                bindSwiperExpo($swMore);
+            }
+        });
+    }
+
+    function bindSwiperExpo($container){
+        var Exposure = UBT.PlugIns.Exposure;
+        var $images, $img;
+
+        $images = $container.find('img').filter("[data-expo]");
+        $images.each(function() {
+            $img = $(this);
+            Exposure.__inViewport($img) && Exposure.prepareToSend($img.data("expo"));
+        });
+    }
+</script>
+```
+
+- 异步 + 懒加载
+
+``` javascript
+<script>
+    function getIntroItem() {
+        var $images, tpl;
+        $.getJSON(introItemUrl, function(res) {
+            if (res.status == 1) {
+                tpl = $("#J_sy_intro_item_tpl").html();
+                $introWrapper.html(juicer(tpl, {
+                    list: res.data
+                }));
+                setTimeout(function(){
+                    // 异步出来的先绑定lazyload事件
+                    $introWrapper.find(".J_lazyimg").lazyload();
+                    bindSwiper();
+                    UBT.PlugIns.Exposure.init();
+                },50);
+            } else {
+                Toast.open(res.info);
+            }
+        });
+    }
+
+    function bindSwiper() {
+        var $swiperIntro = $("#J_swiper_intro");
+        var swiper = new Swiper($swiperIntro, {
+            slidesPerView: "auto",
+            spaceBetween: 0,
+            onTouchEnd: function() {
+                bindSwiperExpo($swiperIntro);
+            }
+        });
+    }
+
+    function bindSwiperExpo($container){
+        var Exposure = UBT.PlugIns.Exposure;
+        var $images, $img;
+
+        $images = $container.find('img');
+        // 强制视线中的J_lazyimg出现
+        $images.filter(".J_lazyimg:in-viewport").trigger("appear");
+        $images.each(function() {
+            $img = $(this);
+            Exposure.__inViewport($img) && Exposure.prepareToSend($img.data("expo"));
+        });
+    }
+</script>
+```
+
 
 ---
 更多内容可以订阅本人微信公众号，一起开启前端小白进阶的世界！
