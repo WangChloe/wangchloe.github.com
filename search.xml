@@ -4,31 +4,6 @@
   
     
     <entry>
-      <title><![CDATA[blog76]]></title>
-      <url>https://wangchloe.vip/2019/07/25/blog76/</url>
-      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
-<hr>
-<a id="more"></a>
-<hr>
-<p>更多内容可以订阅本人微信公众号，一起开启前端小白进阶的世界！<br><img src="http://ww1.sinaimg.cn/large/006tNc79gy1g59sd1aky1j325s0m80xf.jpg" alt="微信公众号：无媛无故"></p>
-]]></content>
-      
-        <categories>
-            
-            <category> 前端札记 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> js </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[NativeApi思考]]></title>
       <url>https://wangchloe.vip/2019/07/23/blog43/</url>
       <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
@@ -140,6 +115,7 @@
 <li>强制刷新</li>
 <li>正则获取指定key的value</li>
 <li>chrome清除缓存、host</li>
+<li>localStorage判断再次访问是否是当天</li>
 </ul>
 <!-- /MarkdownTOC -->
 <a id="more"></a>
@@ -198,6 +174,7 @@
 <h2 id="强制刷新"><a href="#强制刷新" class="headerlink" title="强制刷新"></a>强制刷新</h2><p><code>window.location.href = window.location.href + &#39;&amp;t=&#39; + new Date().getTime();</code></p>
 <h2 id="正则获取指定key的value"><a href="#正则获取指定key的value" class="headerlink" title="正则获取指定key的value"></a>正则获取指定key的value</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> className = $selectedLottery[<span class="number">0</span>].className;</span><br><span class="line"><span class="keyword">var</span> index = className ? <span class="regexp">/lottery-unit-(\d+)/</span>.exec(className)[<span class="number">1</span>] : <span class="string">''</span>;</span><br></pre></td></tr></table></figure>
 <h2 id="chrome清除缓存、host"><a href="#chrome清除缓存、host" class="headerlink" title="chrome清除缓存、host"></a>chrome清除缓存、host</h2><p><code>chrome://net-internals/#sockets</code></p>
+<h2 id="localStorage判断再次访问是否是当天"><a href="#localStorage判断再次访问是否是当天" class="headerlink" title="localStorage判断再次访问是否是当天"></a>localStorage判断再次访问是否是当天</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">toastNews: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> nowDate = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">    <span class="comment">// Thu Aug 23 2018 17:29:16 GMT+0800 (中国标准时间)</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> that = <span class="keyword">this</span>;</span><br><span class="line">    <span class="comment">// 将上次访问时间放在localstorage中</span></span><br><span class="line">    <span class="comment">//取上次进入时间，判断如果是同一天的话，不提示，如果是空或者不是同一天则提示</span></span><br><span class="line">    <span class="keyword">var</span> lastEntryTime = localStorage.getItem(<span class="string">'ls-time'</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (!lastEntryTime || <span class="keyword">this</span>.getDayTimestamp(lastEntryTime) != <span class="keyword">this</span>.getDayTimestamp(nowDate)) &#123; <span class="comment">//空不存在或者不是同一天</span></span><br><span class="line">        localStorage.setItem(<span class="string">'ls-time'</span>, nowDate);</span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">getDayTimestamp: <span class="function"><span class="keyword">function</span>(<span class="params">date</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> parseDate = <span class="keyword">new</span> <span class="built_in">Date</span>(date);</span><br><span class="line">    <span class="keyword">var</span> year = parseDate.getFullYear();</span><br><span class="line">    <span class="comment">// new Date('Thu Aug 23 2018 17:29:16 GMT+0800 (中国标准时间)').getFullYear()</span></span><br><span class="line">    <span class="comment">// 2018</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> month = parseDate.getMonth();</span><br><span class="line">    <span class="keyword">var</span> day = parseDate.getDate();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Date</span>(year,month,day).getTime();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
 <p>更多内容可以订阅本人微信公众号，一起开启前端小白进阶的世界！</p>
 <p>公众号是坚持日更的，不发文的时候推送一些我觉得好用的前端网站或者看到的一些问题的解决方案，也更便于大家交流，就酱。</p>
@@ -458,7 +435,7 @@
     
     <entry>
       <title><![CDATA[挖坑埋坑填坑]]></title>
-      <url>https://wangchloe.vip/2019/04/25/blog64/</url>
+      <url>https://wangchloe.vip/2019/04/20/blog64/</url>
       <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
 <hr>
 <!-- MarkdownTOC -->
