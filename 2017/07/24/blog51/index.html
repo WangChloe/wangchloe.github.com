@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="https://wangchloe.vip">
   <title>php小记 | 无媛无故 - wangchloe的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="以下内容若有问题烦请即时告知我予以修改，以免误导更多人。">
+  <meta name="description" content="以下内容若有问题烦请即时告知我予以修改，以免误导更多人。    新建页面php代码 清楚页面缓存 判断为空不显示该段 rem计算 热区 if语句 循环语句 限制输出字数 gaea配置 ssh跑脚本 修改品牌开始时间 修改店铺优惠券开始时间 修改店铺商品开售时间">
 <meta name="keywords" content="php">
 <meta property="og:type" content="article">
 <meta property="og:title" content="php小记">
 <meta property="og:url" content="https://wangchloe.vip/2017/07/24/blog51/index.html">
 <meta property="og:site_name" content="无媛无故 - wangchloe的个人博客">
-<meta property="og:description" content="以下内容若有问题烦请即时告知我予以修改，以免误导更多人。">
+<meta property="og:description" content="以下内容若有问题烦请即时告知我予以修改，以免误导更多人。    新建页面php代码 清楚页面缓存 判断为空不显示该段 rem计算 热区 if语句 循环语句 限制输出字数 gaea配置 ssh跑脚本 修改品牌开始时间 修改店铺优惠券开始时间 修改店铺商品开售时间">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006tNc79gy1g59sd1aky1j325s0m80xf.jpg">
 <meta property="og:updated_time" content="2019-07-24T06:55:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="php小记">
-<meta name="twitter:description" content="以下内容若有问题烦请即时告知我予以修改，以免误导更多人。">
+<meta name="twitter:description" content="以下内容若有问题烦请即时告知我予以修改，以免误导更多人。    新建页面php代码 清楚页面缓存 判断为空不显示该段 rem计算 热区 if语句 循环语句 限制输出字数 gaea配置 ssh跑脚本 修改品牌开始时间 修改店铺优惠券开始时间 修改店铺商品开售时间">
 <meta name="twitter:image" content="http://ww1.sinaimg.cn/large/006tNc79gy1g59sd1aky1j325s0m80xf.jpg">
   
     <link rel="alternative" href="/atom.xml" title="无媛无故 - wangchloe的个人博客" type="application/atom+xml">
@@ -197,6 +197,25 @@ var _hmt = _hmt || [];
       
         <script src="/assets/js/APlayer.min.js"> </script><p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
 <hr>
+<!-- MarkdownTOC -->
+<ul>
+<li>新建页面php代码</li>
+<li>清楚页面缓存</li>
+<li>判断为空不显示该段</li>
+<li>rem计算</li>
+<li>热区</li>
+<li>if语句</li>
+<li>循环语句</li>
+<li>限制输出字数</li>
+<li>gaea配置</li>
+<li>ssh跑脚本<ul>
+<li>修改品牌开始时间</li>
+<li>修改店铺优惠券开始时间</li>
+<li>修改店铺商品开售时间</li>
+</ul>
+</li>
+</ul>
+<!-- /MarkdownTOC -->
 <a id="more"></a>
 <h2 id="新建页面php代码"><a href="#新建页面php代码" class="headerlink" title="新建页面php代码"></a>新建页面php代码</h2><blockquote>
 <p>Vipday不能写为VipDay，内测环境为linux，不能辨别大写字符，页面报错。</p>
@@ -210,8 +229,10 @@ var _hmt = _hmt || [];
 <li>使用ls缓存</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">   $useZepto = false;</span><br><span class="line">   $useVue = true;</span><br><span class="line">   $useLsCache = ture;</span><br><span class="line">?&gt;</span><br><span class="line"></span><br><span class="line">&lt;include file=&quot;$header&quot; remswitch=&quot;1&quot; remwidth=&quot;640&quot; /&gt;</span><br><span class="line"></span><br><span class="line">xxx</span><br><span class="line">&lt;include file=&quot;$footerls&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="清楚页面缓存"><a href="#清楚页面缓存" class="headerlink" title="清楚页面缓存"></a>清楚页面缓存</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">    C('CSS_JS_TIME', time());</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="判断为空不显示该段"><a href="#判断为空不显示该段" class="headerlink" title="判断为空不显示该段"></a>判断为空不显示该段</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;notempty name=&quot;gaea28001[&apos;Take_rebate&apos;][0][&apos;img&apos;]&quot;&gt;</span><br><span class="line">&lt;div class=&quot;rule-container&quot; id=&quot;J_rule_container&quot; data-promotion=&quot;&#123;$detail.is_promotion&#125;&quot; data-outshopid=&quot;&#123;$detail.out_shop_id&#125;&quot; style=&quot;background-image:url(&#123;$gaea28001[&apos;Take_rebate&apos;][0][&apos;img&apos;]&#125;);background-size:7.5rem auto;&quot;&gt;</span><br><span class="line">    &lt;a href=&quot;http://super.fanli.com/h5/item/rule&quot; data-spm=&quot;super_prodetial.h5.pty-viewdetail~std-35551&quot;&gt;&lt;/a&gt;</span><br><span class="line">    &lt;div class=&quot;fui-grid&quot;&gt;</span><br><span class="line">        &lt;p class=&quot;fui-span1 rule-title&quot;&gt;&#123;$gaea28001[&apos;Take_rebate&apos;][0][&apos;data1&apos;]&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p class=&quot;fui-span0 rule-anchor&quot;&gt;查看详情&lt;/p&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/notempty&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="rem计算"><a href="#rem计算" class="headerlink" title="rem计算"></a>rem计算</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;p class=&quot;fission-diy-links&quot;&gt;</span><br><span class="line">    &lt;volist name=&quot;gaea.red_packet_hotpic_number&quot; id=&quot;vo&quot;&gt;</span><br><span class="line">        &lt;?php</span><br><span class="line">        $point = explode(&apos;,&apos;, $vo[&apos;data1&apos;]);</span><br><span class="line">        ?&gt;</span><br><span class="line">        &lt;a style=&quot;left:&lt;?php echo round($point[0]/100, 2);?&gt;rem; top:&lt;?php echo round($point[1]/100, 2);?&gt;rem; width:&lt;?php echo round($point[2]/100, 2);?&gt;rem; height:&lt;?php echo round($point[3]/100, 2);?&gt;rem;&quot; href=&quot;&#123;$vo.link&#125;&quot;&gt;&lt;/a&gt;</span><br><span class="line">    &lt;/volist&gt;</span><br><span class="line">&lt;/p&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;img class=&quot;brand-repacket-icon&quot; src=&quot;&#123;$brand.icons.brand_inner_left_icon.pic_url&#125;&quot; style=&quot;width:&lt;?php echo $brand[&apos;icons&apos;][&apos;brand_inner_left_icon&apos;][&apos;width&apos;]/100; ?&gt;rem; height:&lt;?php echo $brand[&apos;icons&apos;][&apos;brand_inner_left_icon&apos;][&apos;height&apos;]/100; ?&gt;rem;&quot; alt=&quot;&quot;&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="热区"><a href="#热区" class="headerlink" title="热区"></a>热区</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"nation-more"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">volist</span> <span class="attr">name</span>=<span class="string">"gaea.game_country_hot_link"</span> <span class="attr">id</span>=<span class="string">"vo"</span>&gt;</span></span><br><span class="line">    &lt;?php</span><br><span class="line">    $position = explode(',', $vo['data1']);</span><br><span class="line">    ?&gt;</span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;$vo.link&#125;"</span> <span class="attr">style</span>=<span class="string">"left:&#123;$position[0]/100&#125;rem; top:&#123;$position[1]/100&#125;rem; width:&#123;$position[2]/100&#125;rem; height:&#123;$position[3]/100&#125;rem;"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">volist</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">volist</span> <span class="attr">name</span>=<span class="string">"gaea.game_country_hot_img"</span> <span class="attr">id</span>=<span class="string">"vo"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"w100 J_lazyimg"</span> <span class="attr">src</span>=<span class="string">"http://static2.51fanli.net/common/images/loading/spacer.png"</span> <span class="attr">data-original</span>=<span class="string">"&#123;$vo.img&#125;"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">volist</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;eq name=&quot;brand.promotion.0.is_item&quot; value=&quot;1&quot;&gt;</span><br><span class="line">&#123;/*预计奖励*/&#125;</span><br><span class="line"></span><br><span class="line">&lt;else/&gt;</span><br><span class="line">&#123;/*实际奖励*/&#125;</span><br><span class="line">&lt;/eq&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;swiper-wrapper&quot;&gt;</span><br><span class="line">    &lt;volist name=&quot;zhiboList[$j]&quot; id=&quot;vo&quot;&gt;</span><br><span class="line">        &lt;a href=&quot;&#123;$vo.link|default=&apos;javascript:void(0);&apos;&#125;&quot;&gt;&#123;$vo.txt&#125;&lt;/a&gt;</span><br><span class="line">    &lt;/volist&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="限制输出字数"><a href="#限制输出字数" class="headerlink" title="限制输出字数"></a>限制输出字数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 限制输出9个字 --&gt;</span><br><span class="line">&lt;p class=&quot;item-title&quot;&gt;&lt;?php echo mb_substr($vo[&apos;item_title&apos;],0,9); ?&gt;&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;p class=&quot;item-title fui-uti-nowrap-line&quot;&gt;$&#123;item.item_title|mb_substr=0,9,&apos;utf-8&apos;&#125;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
@@ -494,15 +515,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">杂技</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">目录</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">微信</a>
+                <a href="javascript:void(0)" class="js-tag color3">杂技</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -510,11 +527,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webview</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color3">微信</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webview</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -534,11 +555,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">规范</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">特效</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">规范</a>
+                <a href="javascript:void(0)" class="js-tag color4">填坑记</a>
               </li>
              
               <li class="article-tag-list-item">

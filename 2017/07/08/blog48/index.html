@@ -17,7 +17,7 @@
 <meta property="og:description" content="以下内容若有问题烦请即时告知我予以修改，以免误导更多人。  🦁移动端轮播神器～">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006tNc79gy1g59sd1aky1j325s0m80xf.jpg">
-<meta property="og:updated_time" content="2019-07-24T06:46:24.160Z">
+<meta property="og:updated_time" content="2019-07-25T03:22:05.040Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="swiper小记">
 <meta name="twitter:description" content="以下内容若有问题烦请即时告知我予以修改，以免误导更多人。  🦁移动端轮播神器～">
@@ -210,6 +210,14 @@ var _hmt = _hmt || [];
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">swiper.startAutoplay();</span><br></pre></td></tr></table></figure>
 <h3 id="安卓swiper禁止带动下拉刷新"><a href="#安卓swiper禁止带动下拉刷新" class="headerlink" title="安卓swiper禁止带动下拉刷新"></a>安卓swiper禁止带动下拉刷新</h3><p><code>followFinger: Fanli.Utility.isIos</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">swiper = new Swiper(&apos;.swiper-container&apos;, &#123;</span><br><span class="line">    autoplay: 3000, //可选选项，自动滑动</span><br><span class="line">    pagination: &apos;.swiper-pagination&apos;,</span><br><span class="line">    autoplayDisableOnInteraction: false,</span><br><span class="line">    followFinger: Fanli.Utility.isIos</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="swiper曝光问题"><a href="#swiper曝光问题" class="headerlink" title="swiper曝光问题"></a>swiper曝光问题</h3><ul>
+<li>非懒加载</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">bindSwiper</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> $swMore = $(<span class="string">"#J_swiper_more"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> swiperMore = <span class="keyword">new</span> Swiper($swMore, &#123;</span><br><span class="line">            slidesPerView: <span class="string">"auto"</span>,</span><br><span class="line">            spaceBetween: <span class="number">0</span>,</span><br><span class="line">            onTouchEnd: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                bindSwiperExpo($swMore);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">bindSwiperExpo</span>(<span class="params">$container</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> Exposure = UBT.PlugIns.Exposure;</span><br><span class="line">        <span class="keyword">var</span> $images, $img;</span><br><span class="line"></span><br><span class="line">        $images = $container.find(<span class="string">'img'</span>).filter(<span class="string">"[data-expo]"</span>);</span><br><span class="line">        $images.each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            $img = $(<span class="keyword">this</span>);</span><br><span class="line">            Exposure.__inViewport($img) &amp;&amp; Exposure.prepareToSend($img.data(<span class="string">"expo"</span>));</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>异步 + 懒加载</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">getIntroItem</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> $images, tpl;</span><br><span class="line">        $.getJSON(introItemUrl, <span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (res.status == <span class="number">1</span>) &#123;</span><br><span class="line">                tpl = $(<span class="string">"#J_sy_intro_item_tpl"</span>).html();</span><br><span class="line">                $introWrapper.html(juicer(tpl, &#123;</span><br><span class="line">                    list: res.data</span><br><span class="line">                &#125;));</span><br><span class="line">                setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                    <span class="comment">// 异步出来的先绑定lazyload事件</span></span><br><span class="line">                    $introWrapper.find(<span class="string">".J_lazyimg"</span>).lazyload();</span><br><span class="line">                    bindSwiper();</span><br><span class="line">                    UBT.PlugIns.Exposure.init();</span><br><span class="line">                &#125;,<span class="number">50</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                Toast.open(res.info);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">bindSwiper</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> $swiperIntro = $(<span class="string">"#J_swiper_intro"</span>);</span><br><span class="line">        <span class="keyword">var</span> swiper = <span class="keyword">new</span> Swiper($swiperIntro, &#123;</span><br><span class="line">            slidesPerView: <span class="string">"auto"</span>,</span><br><span class="line">            spaceBetween: <span class="number">0</span>,</span><br><span class="line">            onTouchEnd: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                bindSwiperExpo($swiperIntro);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">bindSwiperExpo</span>(<span class="params">$container</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> Exposure = UBT.PlugIns.Exposure;</span><br><span class="line">        <span class="keyword">var</span> $images, $img;</span><br><span class="line"></span><br><span class="line">        $images = $container.find(<span class="string">'img'</span>);</span><br><span class="line">        <span class="comment">// 强制视线中的J_lazyimg出现</span></span><br><span class="line">        $images.filter(<span class="string">".J_lazyimg:in-viewport"</span>).trigger(<span class="string">"appear"</span>);</span><br><span class="line">        $images.each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            $img = $(<span class="keyword">this</span>);</span><br><span class="line">            Exposure.__inViewport($img) &amp;&amp; Exposure.prepareToSend($img.data(<span class="string">"expo"</span>));</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
 <hr>
 <p>更多内容可以订阅本人微信公众号，一起开启前端小白进阶的世界！<br><img src="http://ww1.sinaimg.cn/large/006tNc79gy1g59sd1aky1j325s0m80xf.jpg" alt="微信公众号：无媛无故"></p>
 
@@ -479,15 +487,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">杂技</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">目录</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">微信</a>
+                <a href="javascript:void(0)" class="js-tag color3">杂技</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -495,11 +499,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webview</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color3">微信</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webview</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -519,11 +527,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">规范</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">特效</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">规范</a>
+                <a href="javascript:void(0)" class="js-tag color4">填坑记</a>
               </li>
              
               <li class="article-tag-list-item">

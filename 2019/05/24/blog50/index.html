@@ -6,21 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://wangchloe.vip">
-  <title>visibilitychange监听回到当前webview | 无媛无故 - wangchloe的个人博客</title>
+  <title>webview回退 | 无媛无故 - wangchloe的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="以下内容若有问题烦请即时告知我予以修改，以免误导更多人。">
+  <meta name="description" content="以下内容若有问题烦请即时告知我予以修改，以免误导更多人。    webview切换回退监听 webview指定回退至某页面">
 <meta name="keywords" content="webview">
 <meta property="og:type" content="article">
-<meta property="og:title" content="visibilitychange监听回到当前webview">
+<meta property="og:title" content="webview回退">
 <meta property="og:url" content="https://wangchloe.vip/2019/05/24/blog50/index.html">
 <meta property="og:site_name" content="无媛无故 - wangchloe的个人博客">
-<meta property="og:description" content="以下内容若有问题烦请即时告知我予以修改，以免误导更多人。">
+<meta property="og:description" content="以下内容若有问题烦请即时告知我予以修改，以免误导更多人。    webview切换回退监听 webview指定回退至某页面">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006tNc79gy1g59sd1aky1j325s0m80xf.jpg">
-<meta property="og:updated_time" content="2019-07-24T06:58:36.709Z">
+<meta property="og:updated_time" content="2019-07-25T08:20:13.846Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="visibilitychange监听回到当前webview">
-<meta name="twitter:description" content="以下内容若有问题烦请即时告知我予以修改，以免误导更多人。">
+<meta name="twitter:title" content="webview回退">
+<meta name="twitter:description" content="以下内容若有问题烦请即时告知我予以修改，以免误导更多人。    webview切换回退监听 webview指定回退至某页面">
 <meta name="twitter:image" content="http://ww1.sinaimg.cn/large/006tNc79gy1g59sd1aky1j325s0m80xf.jpg">
   
     <link rel="alternative" href="/atom.xml" title="无媛无故 - wangchloe的个人博客" type="application/atom+xml">
@@ -182,7 +182,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      visibilitychange监听回到当前webview
+      webview回退
     </h1>
   
 
@@ -197,8 +197,15 @@ var _hmt = _hmt || [];
       
         <script src="/assets/js/APlayer.min.js"> </script><p>以下内容若有问题烦请即时告知我予以修改，以免误导更多人。</p>
 <hr>
+<!-- MarkdownTOC -->
+<ul>
+<li>webview切换回退监听</li>
+<li>webview指定回退至某页面</li>
+</ul>
+<!-- /MarkdownTOC -->
 <a id="more"></a>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">appSubsribe: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> that = <span class="keyword">this</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">document</span>.addEventListener(<span class="string">"visibilitychange"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!<span class="built_in">document</span>.hidden) &#123;</span><br><span class="line">            that.fetchData();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="webview切换回退监听"><a href="#webview切换回退监听" class="headerlink" title="webview切换回退监听"></a>webview切换回退监听</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">appSubsribe: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> that = <span class="keyword">this</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">document</span>.addEventListener(<span class="string">"visibilitychange"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!<span class="built_in">document</span>.hidden) &#123;</span><br><span class="line">            that.fetchData();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="webview指定回退至某页面"><a href="#webview指定回退至某页面" class="headerlink" title="webview指定回退至某页面"></a>webview指定回退至某页面</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bindNativeBack</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!history.state) &#123;</span><br><span class="line">        history.pushState(&#123;&#125;, <span class="literal">null</span>, <span class="literal">null</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//超返首页回退到返利首页</span></span><br><span class="line">    <span class="comment">// 执行closewv?target协议，target链接中有‘？’，需encodeURIComponent转义</span></span><br><span class="line">    <span class="built_in">window</span>.addEventListener(<span class="string">"popstate"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>) </span>&#123;</span><br><span class="line">        Fanli.Utility.bridgeApp(<span class="string">"ifanli://m.51fanli.com/app/action/closewv?target="</span>+<span class="built_in">encodeURIComponent</span>(<span class="string">"ifanli://m.51fanli.com/app/show/native?name=sfmain"</span>));</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
 <p>更多内容可以订阅本人微信公众号，一起开启前端小白进阶的世界！<br><img src="http://ww1.sinaimg.cn/large/006tNc79gy1g59sd1aky1j325s0m80xf.jpg" alt="微信公众号：无媛无故"></p>
 
@@ -468,15 +475,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">杂技</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">目录</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">微信</a>
+                <a href="javascript:void(0)" class="js-tag color3">杂技</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -484,11 +487,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webview</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color3">微信</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webview</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -508,11 +515,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">规范</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">特效</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">规范</a>
+                <a href="javascript:void(0)" class="js-tag color4">填坑记</a>
               </li>
              
               <li class="article-tag-list-item">

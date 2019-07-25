@@ -8,13 +8,13 @@
   <link rel="dns-prefetch" href="https://wangchloe.vip">
   <title>video.js小记 | 无媛无故 - wangchloe的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="以下内容若有问题烦请即时告知我予以修改，以免误导更多人。    1.chrome video不能自动播放  videojs暂停后不能播放   3.iOS 10+ 新政策。  Refused to create worker from blob">
+  <meta name="description" content="以下内容若有问题烦请即时告知我予以修改，以免误导更多人。    chrome video不能自动播放 videojs暂停后不能播放 iOS 10+ 新政策。 Refused to create worker from blob">
 <meta name="keywords" content="项目总结,video.js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="video.js小记">
 <meta property="og:url" content="https://wangchloe.vip/2019/06/25/blog55/index.html">
 <meta property="og:site_name" content="无媛无故 - wangchloe的个人博客">
-<meta property="og:description" content="以下内容若有问题烦请即时告知我予以修改，以免误导更多人。    1.chrome video不能自动播放  videojs暂停后不能播放   3.iOS 10+ 新政策。  Refused to create worker from blob">
+<meta property="og:description" content="以下内容若有问题烦请即时告知我予以修改，以免误导更多人。    chrome video不能自动播放 videojs暂停后不能播放 iOS 10+ 新政策。 Refused to create worker from blob">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/006tNc79gy1g5b2chlepnj30tj01xdgf.jpg">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/006tNc79gy1g5b2ckq6f6j30tj06l3zq.jpg">
@@ -22,7 +22,7 @@
 <meta property="og:updated_time" content="2019-06-25T07:34:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="video.js小记">
-<meta name="twitter:description" content="以下内容若有问题烦请即时告知我予以修改，以免误导更多人。    1.chrome video不能自动播放  videojs暂停后不能播放   3.iOS 10+ 新政策。  Refused to create worker from blob">
+<meta name="twitter:description" content="以下内容若有问题烦请即时告知我予以修改，以免误导更多人。    chrome video不能自动播放 videojs暂停后不能播放 iOS 10+ 新政策。 Refused to create worker from blob">
 <meta name="twitter:image" content="http://ww3.sinaimg.cn/large/006tNc79gy1g5b2chlepnj30tj01xdgf.jpg">
   
     <link rel="alternative" href="/atom.xml" title="无媛无故 - wangchloe的个人博客" type="application/atom+xml">
@@ -201,21 +201,15 @@ var _hmt = _hmt || [];
 <hr>
 <!-- MarkdownTOC -->
 <ul>
-<li>1.chrome video不能自动播放</li>
-<li><ol start="2">
+<li>chrome video不能自动播放</li>
 <li>videojs暂停后不能播放</li>
-</ol>
-</li>
-<li>3.iOS 10+ 新政策。</li>
-<li><ol start="4">
+<li>iOS 10+ 新政策。</li>
 <li>Refused to create worker from blob</li>
-</ol>
-</li>
 </ul>
 <!-- /MarkdownTOC -->
 <a id="more"></a>
 <p><a href="https://www.awaimai.com/2053.html" target="_blank" rel="noopener">video.js使用技巧</a></p>
-<h3 id="1-chrome-video不能自动播放"><a href="#1-chrome-video不能自动播放" class="headerlink" title="1.chrome video不能自动播放"></a>1.chrome video不能自动播放</h3><ul>
+<h3 id="chrome-video不能自动播放"><a href="#chrome-video不能自动播放" class="headerlink" title="chrome video不能自动播放"></a>chrome video不能自动播放</h3><ul>
 <li>方法一</li>
 </ul>
 <p>在chrome 浏览器中输入：chrome://flags，搜索“Autoplay policy”，默认为“Default”，</p>
@@ -224,11 +218,11 @@ var _hmt = _hmt || [];
 <li>方法二</li>
 </ul>
 <p>在使用video标签的过程中，设置静音播放</p>
-<h3 id="2-videojs暂停后不能播放"><a href="#2-videojs暂停后不能播放" class="headerlink" title="2. videojs暂停后不能播放"></a>2. videojs暂停后不能播放</h3><p>需使用source配置video资源</p>
+<h3 id="videojs暂停后不能播放"><a href="#videojs暂停后不能播放" class="headerlink" title="videojs暂停后不能播放"></a>videojs暂停后不能播放</h3><p>需使用source配置video资源</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span></span></span><br><span class="line"><span class="tag">    <span class="attr">id</span>=<span class="string">"J_video_wrap"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">class</span>=<span class="string">"video-js video-box"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">ref</span>=<span class="string">"video"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">controls</span></span></span><br><span class="line"><span class="tag">    <span class="attr">preload</span>=<span class="string">"auto"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">autoplay</span></span></span><br><span class="line"><span class="tag">    <span class="attr">x-webkit-airplay</span>=<span class="string">"allow"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">webkit-playsinline</span></span></span><br><span class="line"><span class="tag">    <span class="attr">playsinline</span></span></span><br><span class="line"><span class="tag">   <span class="attr">poster</span>=<span class="string">"&#123;$video.img&#125;"</span></span></span><br><span class="line"><span class="tag">   <span class="attr">src</span>=<span class="string">"&#123;$video.link&#125;"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span></span></span><br><span class="line"><span class="tag">    <span class="attr">id</span>=<span class="string">"J_video_wrap"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">class</span>=<span class="string">"video-js video-box"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">ref</span>=<span class="string">"video"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">controls</span></span></span><br><span class="line"><span class="tag">    <span class="attr">preload</span>=<span class="string">"auto"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">autoplay</span></span></span><br><span class="line"><span class="tag">    <span class="attr">x-webkit-airplay</span>=<span class="string">"allow"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">webkit-playsinline</span></span></span><br><span class="line"><span class="tag">    <span class="attr">playsinline</span></span></span><br><span class="line"><span class="tag">   <span class="attr">poster</span>=<span class="string">"&#123;$video.img&#125;"</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"&#123;$video.link&#125;"</span> <span class="attr">type</span>=<span class="string">"video/mp4"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="3-iOS-10-新政策。"><a href="#3-iOS-10-新政策。" class="headerlink" title="3.iOS 10+ 新政策。"></a>3.iOS 10+ 新政策。</h3><p>在省电模式下无法自动播放视频。android任何模式都不能自动播放，只能让用户手动触发</p>
-<h3 id="4-Refused-to-create-worker-from-blob"><a href="#4-Refused-to-create-worker-from-blob" class="headerlink" title="4. Refused to create worker from blob"></a>4. Refused to create worker from blob</h3><p><img src="http://ww3.sinaimg.cn/large/006tNc79gy1g5b2chlepnj30tj01xdgf.jpg" alt=""></p>
+<h3 id="iOS-10-新政策。"><a href="#iOS-10-新政策。" class="headerlink" title="iOS 10+ 新政策。"></a>iOS 10+ 新政策。</h3><p>在省电模式下无法自动播放视频。android任何模式都不能自动播放，只能让用户手动触发</p>
+<h3 id="Refused-to-create-worker-from-blob"><a href="#Refused-to-create-worker-from-blob" class="headerlink" title="Refused to create worker from blob"></a>Refused to create worker from blob</h3><p><img src="http://ww3.sinaimg.cn/large/006tNc79gy1g5b2chlepnj30tj01xdgf.jpg" alt=""></p>
 <p>解决：</p>
 <p><img src="http://ww2.sinaimg.cn/large/006tNc79gy1g5b2ckq6f6j30tj06l3zq.jpg" alt=""></p>
 <p>在header的CSP(Content Security Policy ,内容安全策略)处添加blob:</p>
@@ -333,18 +327,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2019/07/23/blog43/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/07/20/blog37/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          NativeApi思考
+          每天10个前端知识点：杂技
         
       </div>
     </a>
   
   
     <a href="/2019/05/24/blog50/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">visibilitychange监听回到当前webview</div>
+      <div class="article-nav-title">webview回退</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -506,15 +500,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">杂技</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">目录</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">微信</a>
+                <a href="javascript:void(0)" class="js-tag color3">杂技</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -522,11 +512,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webview</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color3">微信</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webview</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -546,11 +540,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">规范</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">特效</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">规范</a>
+                <a href="javascript:void(0)" class="js-tag color4">填坑记</a>
               </li>
              
               <li class="article-tag-list-item">

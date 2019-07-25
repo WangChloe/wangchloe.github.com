@@ -8,20 +8,20 @@
   <link rel="dns-prefetch" href="https://wangchloe.vip">
   <title>NativeApi思考 | 无媛无故 - wangchloe的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="以下内容若有问题烦请即时告知我予以修改，以免误导更多人。    NativeApi思考 以调用Native上传图片组件为例 Hybrid通信原理 JS Bridge">
+  <meta name="description" content="以下内容若有问题烦请即时告知我予以修改，以免误导更多人。    以调用Native上传图片组件为例 Hybrid通信原理 JS Bridge">
 <meta name="keywords" content="webview">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NativeApi思考">
 <meta property="og:url" content="https://wangchloe.vip/2019/07/23/blog43/index.html">
 <meta property="og:site_name" content="无媛无故 - wangchloe的个人博客">
-<meta property="og:description" content="以下内容若有问题烦请即时告知我予以修改，以免误导更多人。    NativeApi思考 以调用Native上传图片组件为例 Hybrid通信原理 JS Bridge">
+<meta property="og:description" content="以下内容若有问题烦请即时告知我予以修改，以免误导更多人。    以调用Native上传图片组件为例 Hybrid通信原理 JS Bridge">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://dailc.github.io/staticResource/blog/hybrid/jsbridge/img_hybrid_base_jsbridgePrinciple_1.png?_=5931322">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006tNc79gy1g59sd1aky1j325s0m80xf.jpg">
-<meta property="og:updated_time" content="2019-07-24T06:30:13.036Z">
+<meta property="og:updated_time" content="2019-07-25T08:27:41.822Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NativeApi思考">
-<meta name="twitter:description" content="以下内容若有问题烦请即时告知我予以修改，以免误导更多人。    NativeApi思考 以调用Native上传图片组件为例 Hybrid通信原理 JS Bridge">
+<meta name="twitter:description" content="以下内容若有问题烦请即时告知我予以修改，以免误导更多人。    以调用Native上传图片组件为例 Hybrid通信原理 JS Bridge">
 <meta name="twitter:image" content="https://dailc.github.io/staticResource/blog/hybrid/jsbridge/img_hybrid_base_jsbridgePrinciple_1.png?_=5931322">
   
     <link rel="alternative" href="/atom.xml" title="无媛无故 - wangchloe的个人博客" type="application/atom+xml">
@@ -200,18 +200,14 @@ var _hmt = _hmt || [];
 <hr>
 <!-- MarkdownTOC -->
 <ul>
-<li>NativeApi思考<ul>
 <li>以调用Native上传图片组件为例</li>
 <li>Hybrid通信原理<ul>
 <li>JS Bridge</li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
 <!-- /MarkdownTOC -->
 <a id="more"></a>
-<h2 id="NativeApi思考"><a href="#NativeApi思考" class="headerlink" title="NativeApi思考"></a>NativeApi思考</h2><p>“//webapp/js/common/hybridapi/nativefunction.js”,</p>
 <h3 id="以调用Native上传图片组件为例"><a href="#以调用Native上传图片组件为例" class="headerlink" title="以调用Native上传图片组件为例"></a>以调用Native上传图片组件为例</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    NS.register(<span class="string">"NativeApi"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 目前Android webview不支持type=file事件，通过协议解决：</span></span><br><span class="line">    <span class="comment">// 定义全局函数用于回调 </span></span><br><span class="line">    <span class="built_in">window</span>[<span class="string">"nativeTakePhotoCallback"</span>] = <span class="function"><span class="keyword">function</span>(<span class="params">result, url, ud</span>) </span>&#123;&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//options参数若有相同项，则替换$.extend内的第三个&#123;&#125;类目</span></span><br><span class="line">    NS.NativeApi.add(<span class="string">"takePhoto"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">options</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> settings = $.extend(<span class="literal">true</span>, &#123;&#125;, &#123;</span><br><span class="line">            imgMaxWidth: <span class="number">640</span>,</span><br><span class="line">            uploadUrl: <span class="string">"&#123;0&#125;xiaozu/ajaxUploadImg"</span>.format(currentApiRoot),</span><br><span class="line">            userData: <span class="string">""</span>,</span><br><span class="line">            t: <span class="number">0</span>,</span><br><span class="line">            callback: <span class="string">"nativeTakePhotoCallback"</span></span><br><span class="line">        &#125;, options);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> protocol = <span class="string">"ns://&#123;0&#125;/dev/takephoto?cb=&#123;1&#125;&amp;w=&#123;2&#125;&amp;ud=&#123;3&#125;&amp;upload=&#123;4&#125;&amp;t=&#123;5&#125;"</span></span><br><span class="line">            .format(domain,</span><br><span class="line">                rebuildCallback(settings.callback),</span><br><span class="line">                settings.imgMaxWidth,</span><br><span class="line">                settings.userData,</span><br><span class="line">                <span class="comment">// 把字符串作为 URI 组件进行编码，其中的某些字符将被十六进制的转义序列进行替换。</span></span><br><span class="line">                <span class="comment">// eg: : -&gt; %3A   / -&gt; %2F</span></span><br><span class="line">                <span class="built_in">encodeURIComponent</span>(settings.uploadUrl),</span><br><span class="line">                settings.t);</span><br><span class="line">        connectApp(protocol);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// js Bridge建立Native与H5间通信</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">connectApp</span>(<span class="params">protocol</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> iframe = <span class="built_in">document</span>.createElement(<span class="string">"iframe"</span>);</span><br><span class="line">        <span class="keyword">var</span> iframeStyle = <span class="built_in">document</span>.createAttribute(<span class="string">"style"</span>);</span><br><span class="line">        <span class="keyword">var</span> iframeSrc = <span class="built_in">document</span>.createAttribute(<span class="string">"src"</span>);</span><br><span class="line"></span><br><span class="line">        iframeStyle.nodeValue = <span class="string">"display:none;width:0;height:0;"</span>;</span><br><span class="line">        iframeSrc.nodeValue = protocol;</span><br><span class="line">        iframe.setAttributeNode(iframeStyle);</span><br><span class="line">        iframe.setAttributeNode(iframeSrc);</span><br><span class="line">        <span class="built_in">document</span>.body.appendChild(iframe);</span><br><span class="line"></span><br><span class="line">        setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="built_in">document</span>.body.removeChild(iframe);</span><br><span class="line">        &#125;, <span class="number">250</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">rebuildCallback</span>(<span class="params">cb</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> t = cb;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> ($.isFunction(cb)) &#123;</span><br><span class="line">            t = <span class="string">"hybrid_"</span> + (+<span class="keyword">new</span> <span class="built_in">Date</span>());</span><br><span class="line">            <span class="built_in">window</span>[t] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="comment">// 将具有length属性的对象转成数组</span></span><br><span class="line">                cb.apply(<span class="literal">null</span>, <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>, <span class="number">0</span>));</span><br><span class="line">                <span class="keyword">delete</span> <span class="built_in">window</span>[t];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> t;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
 <hr>
 <ul>
@@ -365,9 +361,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
+    <a href="/2019/07/25/blog76/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          blog76
+        
+      </div>
+    </a>
   
-    <a href="/2019/06/25/blog55/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">video.js小记</div>
+  
+    <a href="/2019/07/20/blog37/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">每天10个前端知识点：杂技</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -529,15 +534,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">杂技</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">目录</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">微信</a>
+                <a href="javascript:void(0)" class="js-tag color3">杂技</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -545,11 +546,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webview</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color3">微信</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webview</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -569,11 +574,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">规范</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">特效</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">规范</a>
+                <a href="javascript:void(0)" class="js-tag color4">填坑记</a>
               </li>
              
               <li class="article-tag-list-item">
