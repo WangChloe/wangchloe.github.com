@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="https://wangchloe.vip">
   <title>数组倒置拷贝问题 | 无媛无故 - wangchloe的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="以下内容若有问题烦请即时告知我予以修改，以免误导更多人。  🐣以小见大   引用类型导致的问题 数组倒置需拷贝至新数组才能不影响原数组 ES6 数组浅拷贝 深拷贝实现 元素的类型判断 (1)递归拷贝 (2)树的广度优先遍历 (3)JSON解析反解析">
-<meta name="keywords" content="js">
+  <meta name="description" content="以下内容若有问题烦请即时告知我予以修改，以免误导更多人。  🐣以小见大   引用类型导致的问题 数组倒置需拷贝至新数组才能不影响原数组 ES6 数组浅拷贝 深拷贝实现 元素的类型判断 (1)递归拷贝 (2)树的广度优先遍历 (3)JSON解析反解析   应用：vue 父子组件传递数据深拷贝">
+<meta name="keywords" content="js,项目总结">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数组倒置拷贝问题">
 <meta property="og:url" content="https://wangchloe.vip/2019/04/25/blog75/index.html">
 <meta property="og:site_name" content="无媛无故 - wangchloe的个人博客">
-<meta property="og:description" content="以下内容若有问题烦请即时告知我予以修改，以免误导更多人。  🐣以小见大   引用类型导致的问题 数组倒置需拷贝至新数组才能不影响原数组 ES6 数组浅拷贝 深拷贝实现 元素的类型判断 (1)递归拷贝 (2)树的广度优先遍历 (3)JSON解析反解析">
+<meta property="og:description" content="以下内容若有问题烦请即时告知我予以修改，以免误导更多人。  🐣以小见大   引用类型导致的问题 数组倒置需拷贝至新数组才能不影响原数组 ES6 数组浅拷贝 深拷贝实现 元素的类型判断 (1)递归拷贝 (2)树的广度优先遍历 (3)JSON解析反解析   应用：vue 父子组件传递数据深拷贝">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006tNc79gy1g59sd1aky1j325s0m80xf.jpg">
-<meta property="og:updated_time" content="2019-07-25T09:59:25.952Z">
+<meta property="og:updated_time" content="2019-07-26T09:14:17.073Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数组倒置拷贝问题">
-<meta name="twitter:description" content="以下内容若有问题烦请即时告知我予以修改，以免误导更多人。  🐣以小见大   引用类型导致的问题 数组倒置需拷贝至新数组才能不影响原数组 ES6 数组浅拷贝 深拷贝实现 元素的类型判断 (1)递归拷贝 (2)树的广度优先遍历 (3)JSON解析反解析">
+<meta name="twitter:description" content="以下内容若有问题烦请即时告知我予以修改，以免误导更多人。  🐣以小见大   引用类型导致的问题 数组倒置需拷贝至新数组才能不影响原数组 ES6 数组浅拷贝 深拷贝实现 元素的类型判断 (1)递归拷贝 (2)树的广度优先遍历 (3)JSON解析反解析   应用：vue 父子组件传递数据深拷贝">
 <meta name="twitter:image" content="http://ww1.sinaimg.cn/large/006tNc79gy1g59sd1aky1j325s0m80xf.jpg">
   
     <link rel="alternative" href="/atom.xml" title="无媛无故 - wangchloe的个人博客" type="application/atom+xml">
@@ -210,6 +210,7 @@ var _hmt = _hmt || [];
 <li>(3)JSON解析反解析</li>
 </ul>
 </li>
+<li>应用：vue 父子组件传递数据深拷贝</li>
 </ul>
 <!-- /MarkdownTOC -->
 <a id="more"></a>
@@ -238,6 +239,8 @@ var _hmt = _hmt || [];
 <h4 id="3-JSON解析反解析"><a href="#3-JSON解析反解析" class="headerlink" title="(3)JSON解析反解析"></a>(3)JSON解析反解析</h4><p>深拷贝对象还有另一个解决方法，在<strong>对象中不含有函数</strong>的时候，使用JSON解析反解析就可以得到一个深拷贝对象</p>
 <p><code>JSON.parse(JSON.stringify(obj))</code></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = [</span><br><span class="line">    &#123;</span><br><span class="line">        name:<span class="string">'melin1'</span>,</span><br><span class="line">        job:<span class="string">'111'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        name:<span class="string">'melin2'</span>,</span><br><span class="line">        job:<span class="string">'222'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        name:<span class="string">'melin3'</span>,</span><br><span class="line">        job:<span class="string">'333'</span></span><br><span class="line">    &#125;</span><br><span class="line">];</span><br><span class="line"><span class="keyword">var</span> copy = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(obj));</span><br><span class="line">copy[<span class="number">1</span>].name = <span class="string">'tom'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(obj[<span class="number">1</span>].name); <span class="comment">//melin2</span></span><br><span class="line"><span class="built_in">console</span>.log(copy[<span class="number">1</span>].name); <span class="comment">//tom</span></span><br></pre></td></tr></table></figure>
+<h2 id="应用：vue-父子组件传递数据深拷贝"><a href="#应用：vue-父子组件传递数据深拷贝" class="headerlink" title="应用：vue 父子组件传递数据深拷贝"></a>应用：vue 父子组件传递数据深拷贝</h2><p>场景：父组件props向子组件传递数据，若为引用类型（数组or对象），子组件改变该数据时会影响父组件数据，不想改变时可以深拷贝该数据再做操作。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;  </span><br><span class="line">   data: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;  </span><br><span class="line">      <span class="keyword">var</span> obj=&#123;&#125;;  </span><br><span class="line">      obj=<span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(<span class="keyword">this</span>.templateData));</span><br><span class="line">      <span class="comment">//this.templateData是父组件传递的对象  </span></span><br><span class="line">      <span class="keyword">return</span> obj;</span><br><span class="line">    &#125;  </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 <hr>
 <p>更多内容可以订阅本人微信公众号，一起开启前端小白进阶的世界！<br><img src="http://ww1.sinaimg.cn/large/006tNc79gy1g59sd1aky1j325s0m80xf.jpg" alt="微信公众号：无媛无故"></p>
 
@@ -254,6 +257,10 @@ var _hmt = _hmt || [];
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">项目总结</a>
         		</li>
       		
 		</ul>
@@ -519,15 +526,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">微信</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">webview</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">微信</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -547,11 +554,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">规范</a>
+                <a href="javascript:void(0)" class="js-tag color3">特效</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">特效</a>
+                <a href="javascript:void(0)" class="js-tag color3">规范</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -559,11 +566,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">爱旅游</a>
+                <a href="javascript:void(0)" class="js-tag color4">爱做饭</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">爱做饭</a>
+                <a href="javascript:void(0)" class="js-tag color4">爱旅游</a>
               </li>
              
               <li class="article-tag-list-item">
