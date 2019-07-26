@@ -8,15 +8,12 @@ tags: [js, 应用]
 
 以下内容若有问题烦请即时告知我予以修改，以免误导更多人。
 
-
-
-
 ---
 *本次内容总结了个人遇到的部分数组应用，其中不乏前端笔试高频考点。*
 
 ---
 
-### 1. 数组翻转方法2
+## 1. 数组翻转方法2
 eg:这里说明一下，这个方法用的不是reverse，因为一次面试中被问过不用reverse实现翻转，所以这里标注为数组的翻转方法2。
 ``` javascript
 <script>
@@ -29,9 +26,8 @@ eg:这里说明一下，这个方法用的不是reverse，因为一次面试中�
 	alert(arr2);
 </script>
 ```
-<!-- more -->
 
-### 2. 首字母大写
+## 2. 首字母大写
 eg:
 ``` javascript
 <script>
@@ -47,19 +43,19 @@ eg:
 
     //正则写法
 	var str2 = str.replace(/\w+/g, function(s) {
-		return s.charAt(0).toUpperCase().substring();
+		return s.charAt(0).toUpperCase() + s.substring(1);
 	})
 	alert(str2);
 </script>
 ```
 
-### 3.快速清空数组
+## 3.快速清空数组
 1. length=0;
 2. arr=[];
 3. arr.splice(0,arr.length);
 4. 循环pop或shift
 
-### 4. 数组排序方法
+## 4. 数组排序方法
 更多方法见后续排序算法篇
 
 ``` javascript
@@ -86,7 +82,7 @@ eg:
 </script>
 ```
 
-### 5. 数组内查找元素是否存在
+## 5. 数组内查找元素是否存在
 ``` javascript
 <script>
 	function findInArr(item, arr) {
@@ -101,8 +97,8 @@ eg:
 </script>
 ```
 
-### 6. 数组去重的多种方法
-#### (1)findInArr
+## 6. 数组去重的多种方法
+### (1)findInArr
 
 ``` javascript
 <script>
@@ -127,7 +123,7 @@ eg:
 </script>
 ```
 
-#### (2)json(自动从小到大排序)
+### (2)json(自动从小到大排序)
 
 ``` javascript
 <script>
@@ -164,7 +160,7 @@ eg:
 
 ```
 
-#### (3)sort()
+### (3)sort()
 
 ``` javascript
 <script>
@@ -178,7 +174,7 @@ eg:
 </script>
 ```
 
-#### (4) indexOf
+### (4) indexOf
 这个方法是在前端公众号偶然看到的，数组的indexOf方法第一次用到
 
 ``` javascript
@@ -191,7 +187,7 @@ eg:
 </script>
 ```
 
-#### (5)二分法
+### (5)二分法
 
 ``` javascript
 <script>
@@ -231,7 +227,7 @@ eg:
 </script>
 ```
 
-#### (6)Map(ES6)
+### (6)Map(ES6)
 摘自[也谈JavaScript数组去重](http://web.jobbole.com/89843/)
 
 Map的存取使用单独的get()、set()接口。
@@ -254,7 +250,7 @@ function unique(arr) {
 </script>
 ```
 
-#### (7)Set(ES6)
+### (7)Set(ES6)
 摘自[也谈JavaScript数组去重](http://web.jobbole.com/89843/)
 
 Set不允许重复元素出现。
@@ -266,6 +262,80 @@ function unique(arr){
     return Array.from(set);
 }
 </script>
+```
+
+### (8)Array.filter
+
+``` javascript
+var arr = ['A', 'B', 'C'];
+var r = arr.filter(function (element, index, self) {
+ console.log(element); // 依次打印'A', 'B', 'C'
+ console.log(index); // 依次打印0, 1, 2
+ console.log(self); // self就是变量arr
+ return true;
+});
+```
+
+``` javascriptshu
+var r,arr = ['apple', 'strawberry', 'banana', 'pear', 'apple', 'orange', 'orange', 'strawberry'];
+ 
+r = arr.filter(function (element, index, self) { 
+ return self.indexOf(element) === index;
+});
+ 
+console.log(r.toString());
+```
+
+---
+
+## 补一个字符串的应用
+
+### (1) 字符串中出现次数最多的字符
+
+- json
+
+``` javascript
+	var str = 'abcdaaaaaa';
+	var json = {};
+
+	for(var i = 0; i < str.length; i++) {
+		if(json[str.charAt(i)]) {
+			json[str.charAt(i)]++;
+		} else {
+			json[str.charAt(i)] = 1;
+		}
+	}
+
+	var num = -1;
+	var char = '';
+
+	for(var name in json) {
+		if(num < json[name]) {
+			num = json[name];
+			char = name;
+		}
+	}
+
+	console.log(num, char);
+```
+
+- 正则
+
+``` javascript
+	var str = 'abcdaaaaaa';
+	var arr = str.split("")
+		.sort()
+		.join("")
+		.match(/([a-z])\1*/g)
+		.sort(function(a, b) {
+			return b.length - a.length;
+		})
+	console.log("出现最多的是: " + arr[0][0] + "共" + arr[0].length + "次");
+	var hash = {};
+	arr.forEach(function(val) {
+		hash[val[0]] = val.length;
+	});
+	console.dir(hash);
 ```
 ---
 更多内容可以订阅本人微信公众号，一起开启前端小白进阶的世界！

@@ -40,6 +40,7 @@ tags: [js]
 - NaN 非数字 -> 数据类型(number)
 
 >  NaN和任何数据类型都不相等，包括自己
+![](http://ww3.sinaimg.cn/large/006tNc79gy1g5danrbizxj304u03emx2.jpg)
 
 ## 3. 数字相关判断方法
 

@@ -1,7 +1,7 @@
 ---
 title: 数组倒置拷贝问题
 categories: 前端札记
-tags: js
+tags: ['项目总结', 'js']
 date: 2019-04-25 17:46:06
 ---
 以下内容若有问题烦请即时告知我予以修改，以免误导更多人。
@@ -20,6 +20,7 @@ date: 2019-04-25 17:46:06
 	- \(1\)递归拷贝
 	- \(2\)树的广度优先遍历
 	- \(3\)JSON解析反解析
+- 应用：vue 父子组件传递数据深拷贝
 
 <!-- /MarkdownTOC -->
 
@@ -218,6 +219,20 @@ console.log(obj[1].name); //melin2
 console.log(copy[1].name); //tom
 ```
 
+## 应用：vue 父子组件传递数据深拷贝
+
+场景：父组件props向子组件传递数据，若为引用类型（数组or对象），子组件改变该数据时会影响父组件数据，不想改变时可以深拷贝该数据再做操作。
+
+``` javascript
+computed: {  
+   data: function () {  
+      var obj={};  
+      obj=JSON.parse(JSON.stringify(this.templateData));
+      //this.templateData是父组件传递的对象  
+      return obj;
+    }  
+ }
+```
 
 ---
 更多内容可以订阅本人微信公众号，一起开启前端小白进阶的世界！
