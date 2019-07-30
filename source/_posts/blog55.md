@@ -22,6 +22,9 @@ updated: 2019-06-25 15:34:01
 
 [video.js使用技巧](https://www.awaimai.com/2053.html)
 
+
+![](http://ww4.sinaimg.cn/large/006tNc79gy1g5hnzcn1tmj30f00trq58.jpg)
+
 ### chrome video不能自动播放
 
 - 方法一
