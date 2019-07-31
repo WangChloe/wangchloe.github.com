@@ -203,6 +203,8 @@ tags: [css]
 
 #### (1) 定宽高
 
+- absolute + 负margin
+
 ```
 <style>
 	.child {
@@ -215,6 +217,33 @@ tags: [css]
 		height: 150px;
 	}
 </style>
+```
+
+- absolute + margin auto
+
+``` css
+.child {
+    position: absolute;;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+}
+```
+
+- absolute + calc
+
+``` css
+.box {
+    position: absolute;;
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+    width: 100px;
+    height: 100px;
+}
 ```
 
 #### (2) 不定宽高
@@ -280,6 +309,43 @@ tags: [css]
 		align-items: center;
 	}
 </style>
+```
+
+- grid
+
+``` css
+.parent {
+    display: grid;
+}
+.child {
+    align-self: center;
+    justify-self: center;
+}
+```
+
+- writing-mode
+
+``` html
+<div class="grand">
+    <div class="parent">
+        <div class="child">123123</div>
+    </div>
+</div>
+```
+
+``` css
+.grand {
+    writing-mode: vertical-lr;
+    text-align: center;
+}
+.parent {
+    writing-mode: horizontal-tb;
+    display: inline-block;
+    width: 100%;
+}
+.child {
+    display: inline-block;
+}
 ```
 
 - jQuery

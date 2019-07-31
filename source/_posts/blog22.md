@@ -84,6 +84,7 @@ tags: [js, css, 性能优化]
 ## 2. 重排 && 重绘
 
 [简单-页面性能优化](http://www.jianshu.com/p/3802ac513bc5)
+[你真的了解回流和重绘吗](https://github.com/chenjigeng/blog/blob/master/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BA%86%E8%A7%A3%E5%9B%9E%E6%B5%81%E5%92%8C%E9%87%8D%E7%BB%98%E5%90%97.md)
 
 ### (1) 重排(reflow)
 即重新生成布局，**重排必然导致重绘**。

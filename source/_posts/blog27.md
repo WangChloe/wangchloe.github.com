@@ -50,6 +50,9 @@ Subversion
 4. 提交(注释) `commit`
 
 ## 2. git分布式版本控制系统
+
+![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015120901.png))
+
 > 工作区 -> 缓存区 -> 本地仓库 -> 服务器仓库
 
 ### 工作区
