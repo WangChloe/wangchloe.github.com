@@ -63,18 +63,19 @@ tags: [js]
 	console.log(Image instanceof Function); // true
 
 	// 开始划重点
-	console.log(Function instanceof Object); // true
-	console.log(Object instanceof Function); // true
-	console.log(Object instanceof Object); // true
-	console.log(Function instanceof Function); // true
+Function instanceof Object; // true
+Object instanceof Function; // true
+Object instanceof Object; // true
+Function instanceof Function; // true
 
-	console.log(arr instanceof Array); // true
-	console.log(Array instanceof Object); // true
-	console.log(arr instanceof Object); // *true
+arr instanceof Array; // true
+Array instanceof Object; // true
+arr instanceof Object; // *true
 
-	console.log(arr instanceof Array); // true
-	console.log(Array instanceof Function); // true
-	console.log(arr instanceof Function); // *false
+Array instanceof Function; // true
+arr instanceof Function; // *false
+
+1 instanceof Number; // false
 
 	Object.prototype.run = 7;
 	var run = 5;

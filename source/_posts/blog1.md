@@ -94,9 +94,21 @@ if(num == parseInt(num))
 - eg: '12.5' -> 12.5 	'12' -> 12 		'12abc' -> NaN 	'abc' -> NaN
 
 ## 8. 数字转化为字符串
-number + ''
+### number + ''
 
-> eg：12 + '' -> '12'
+eg：12 + '' -> '12'
+
+### ..toString()
+
+eg: (123).toString(); 或 123..toString()
+
+### String()
+
+eg: String(123)
+
+### toFixed()
+
+eg: (123.17).toFixed(1); // 123.2
 
 ## 9. if语句变形
 1. 条件 && 语句; (条件为真时执行)

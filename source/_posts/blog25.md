@@ -53,15 +53,15 @@ tags: [js]
 ## 8. 面向对象：继承
 1. 属性的继承
 
-  - `父级的构造函数.call(this, 参数1, 参数2, ...);`
-  - `父级的构造函数.apply(this, arguments);`
+- `父级的构造函数.call(this, 参数1, 参数2, ...);`
+- `父级的构造函数.apply(this, arguments);`
 
 2. 方法的继承
 
-  - `子级.prototype = 父级.prototype;`  // 引用  子级新方法在此之前写会被清空
+- `子级.prototype = 父级.prototype;`  // 引用  子级新方法在此之前写会被清空
   问题：子级改了，父级也改了
 
-  - 循环复制
+- 循环复制
 
 ```
 <script>
@@ -72,14 +72,46 @@ tags: [js]
 ```
 问题：`子级 instanceof 父级;`  // false
 
-  - 组合继承：子级的原型对象指向父级的实例，子级的原型对象的构造函数再指向自己。 **推荐使用**
+- 组合继承：子级的原型对象指向父级的实例，子级的原型对象的构造函数再指向自己。 **推荐使用**
 
 ```
 <script>
-	子级.prototype = new 父级的构造函数();
+	子级.prototype = new 父级的构造函数(); // 此时子级.prototype.constructor与父级相等
 	子级.prototype.constructor = 子级的构造函数;
 </script>
 ```
+
+- 寄生组合式继承(JS高程第3版 第6章)
+
+``` javascript
+function SuperType(name) {
+    this.name = name
+    this.colors = ['red']
+}
+
+SuperType.prototype.sayName = function() {
+    console.log(this.name)
+}
+// 继承实例属性
+function SubType(name, age) {
+    SuperType.call(this, name)
+    this.age = age
+}
+
+function inheritPrototype(subType, superType) {
+    let prototype = Object.create(superType.prototype)
+    prototype.constructor = subType
+    subType.prototype = prototype
+}
+// 继承原型方法
+inheritPrototype(SubType, SuperType)
+
+// 定义自己的原型方法
+SubType.prototype.sayAge = function() {
+    console.log(this.age)
+}
+```
+
 
 ### 实例：自动播放选项卡(继承)
 

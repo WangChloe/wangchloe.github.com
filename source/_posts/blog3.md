@@ -18,9 +18,9 @@ tags: [js]
 
 ## 1. 返回值问题(return)
 1. return语句后面的代码不执行
-1. **函数若没有写return，则默认返回undefined**
-1. **函数返回语句为return; 也返回undefined**
-1. **return必须写在函数function内**
+2. **函数若没有写return，则默认返回undefined**
+3. **函数返回语句为return; 也返回undefined**
+4. **return必须写在函数function内**
 
 
 <!-- more -->
@@ -219,6 +219,43 @@ oBtn.onclick = function() {
 }
 </script>
 ```
+var arr = [1, 2, 3, 2, 4, 3, 1, 5, 7, 2, 5];
+
+// 数组内查找元素是否存在
+function findInArr(item, arr) {
+	for(var i = 0; i < arr.length; i++) {
+		if(item == arr[i]) {
+			return true;
+		}
+	}
+    return false;
+}
+
+function del(arr, s, e) {
+	if(s > e) {
+		return [];
+	} else if(s == e) {
+		return [arr[s]];
+	}
+
+	var c = Math.floor((s + e) / 2);
+	var l = del(arr, s, c);
+	var r = del(arr, c + 1, e);
+
+	for(var i = 0; i < r.length; i++) {
+		if(!findInArr(r[i], l)) {
+			l.push(r[i]);
+		}
+	}
+
+	return l;
+}
+
+console.log(del(arr, 0 , arr.length - 1));
+判断上传文件格式
+var index = str.lastIndexOf('.');
+var type = str.substring(index+1);	//返回文件类型名
+
 ### (2) 调用封装函数使用this，this不指向元素，指向window
 ### (3) 低级浏览器attachEvent)事件绑定里面的this 报错
 

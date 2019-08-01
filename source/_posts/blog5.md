@@ -144,7 +144,7 @@ eg:
 
 ``` javascript
 <script>
-	function unique(arr) {
+    function unique(arr) {
         var ret = [];
         var len = arr.length;
         var tmp = {};
@@ -276,8 +276,10 @@ var r = arr.filter(function (element, index, self) {
 });
 ```
 
-``` javascriptshu
-var r,arr = ['apple', 'strawberry', 'banana', 'pear', 'apple', 'orange', 'orange', 'strawberry'];
+``` javascript
+filter
+var arr = ['apple', 'strawberry', 'banana', 'pear', 'apple', 'orange', 'orange', 'strawberry'];
+var r = [];
  
 r = arr.filter(function (element, index, self) { 
  return self.indexOf(element) === index;
@@ -322,20 +324,22 @@ console.log(r.toString());
 - 正则
 
 ``` javascript
-	var str = 'abcdaaaaaa';
-	var arr = str.split("")
-		.sort()
-		.join("")
-		.match(/([a-z])\1*/g)
-		.sort(function(a, b) {
-			return b.length - a.length;
-		})
-	console.log("出现最多的是: " + arr[0][0] + "共" + arr[0].length + "次");
-	var hash = {};
-	arr.forEach(function(val) {
-		hash[val[0]] = val.length;
-	});
-	console.dir(hash);
+字符串中出现次数最多的字符
+var str = 'abcdaaaaaa';
+var arr = str.split("")
+	.sort()
+	.join("")
+	.match(/([a-z])\1*/g)
+	.sort(function(a, b) {
+		return b.length - a.length;
+	})
+console.log("出现最多的是: " + arr[0][0] + "共" + arr[0].length + "次");
+
+var hash = {};
+arr.forEach(function(val) {
+	hash[val[0]] = val.length;
+});
+console.dir(hash);
 ```
 ---
 更多内容可以订阅本人微信公众号，一起开启前端小白进阶的世界！
