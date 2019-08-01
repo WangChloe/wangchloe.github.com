@@ -17,7 +17,7 @@
 <meta property="og:description" content="以下内容若有问题烦请即时告知我予以修改，以免误导更多人。  本次内容主要关于js函数返回值、定时器、日期(Date)对象、this以及闭包。  1. 返回值问题(return) return语句后面的代码不执行 函数若没有写return，则默认返回undefined 函数返回语句为return; 也返回undefined return必须写在函数function内">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006tNc79gy1g59sd1aky1j325s0m80xf.jpg">
-<meta property="og:updated_time" content="2019-07-23T09:17:51.709Z">
+<meta property="og:updated_time" content="2019-08-01T09:45:54.737Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="每天10个前端知识点：原生篇(3)">
 <meta name="twitter:description" content="以下内容若有问题烦请即时告知我予以修改，以免误导更多人。  本次内容主要关于js函数返回值、定时器、日期(Date)对象、this以及闭包。  1. 返回值问题(return) return语句后面的代码不执行 函数若没有写return，则默认返回undefined 函数返回语句为return; 也返回undefined return必须写在函数function内">
@@ -264,6 +264,22 @@ var _hmt = _hmt || [];
 <h2 id="9-this"><a href="#9-this" class="headerlink" title="9. this"></a>9. this</h2><p>this: 当前方法属于谁，this就是谁<br><strong>this默认属于window</strong></p>
 <p>定时器里的this不能直接使用，原因：this指向了window</p>
 <h3 id="1-定时器中的this不指向元素，指向window"><a href="#1-定时器中的this不指向元素，指向window" class="headerlink" title="(1) 定时器中的this不指向元素，指向window"></a>(1) 定时器中的this不指向元素，指向window</h3><p>解决：在定时器外保存this<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">oBtn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> _this = <span class="keyword">this</span>;</span><br><span class="line">	setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		_this.style.background = <span class="string">'#f00'</span>;</span><br><span class="line">	&#125;,<span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>var arr = [1, 2, 3, 2, 4, 3, 1, 5, 7, 2, 5];</p>
+<p>// 数组内查找元素是否存在<br>function findInArr(item, arr) {<br>    for(var i = 0; i &lt; arr.length; i++) {<br>        if(item == arr[i]) {<br>            return true;<br>        }<br>    }<br>    return false;<br>}</p>
+<p>function del(arr, s, e) {<br>    if(s &gt; e) {<br>        return [];<br>    } else if(s == e) {<br>        return [arr[s]];<br>    }</p>
+<pre><code>var c = Math.floor((s + e) / 2);
+var l = del(arr, s, c);
+var r = del(arr, c + 1, e);
+
+for(var i = 0; i &lt; r.length; i++) {
+    if(!findInArr(r[i], l)) {
+        l.push(r[i]);
+    }
+}
+
+return l;
+</code></pre><p>}</p>
+<p>console.log(del(arr, 0 , arr.length - 1));<br>判断上传文件格式<br>var index = str.lastIndexOf(‘.’);<br>var type = str.substring(index+1);    //返回文件类型名</p>
 <h3 id="2-调用封装函数使用this，this不指向元素，指向window"><a href="#2-调用封装函数使用this，this不指向元素，指向window" class="headerlink" title="(2) 调用封装函数使用this，this不指向元素，指向window"></a>(2) 调用封装函数使用this，this不指向元素，指向window</h3><h3 id="3-低级浏览器attachEvent-事件绑定里面的this-报错"><a href="#3-低级浏览器attachEvent-事件绑定里面的this-报错" class="headerlink" title="(3) 低级浏览器attachEvent)事件绑定里面的this 报错"></a>(3) 低级浏览器attachEvent)事件绑定里面的this 报错</h3><h2 id="10-闭包"><a href="#10-闭包" class="headerlink" title="10. 闭包"></a>10. 闭包</h2><p>用处：</p>
 <ol>
 <li>解决变量名冲突</li>
@@ -545,11 +561,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webview</a>
+                <a href="javascript:void(0)" class="js-tag color5">前端论坛</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">前端论坛</a>
+                <a href="javascript:void(0)" class="js-tag color3">微信</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -557,7 +573,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">微信</a>
+                <a href="javascript:void(0)" class="js-tag color3">webview</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -577,15 +593,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">特效</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">规范</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">特效</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -601,11 +617,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">爱旅游</a>
+                <a href="javascript:void(0)" class="js-tag color4">爱生活</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">爱生活</a>
+                <a href="javascript:void(0)" class="js-tag color4">爱旅游</a>
               </li>
              
               <li class="article-tag-list-item">

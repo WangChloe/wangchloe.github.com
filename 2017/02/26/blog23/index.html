@@ -17,7 +17,7 @@
 <meta property="og:description" content="以下内容若有问题烦请即时告知我予以修改，以免误导更多人。  1. 面向对象(1) 对象组成 属性(变量) 方法(函数)  (2) 面向对象特征 封装 继承 子级可以继承父级的一切东西 多态 子级可以继承多个父级  (3) 对象相关方法">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006tNc79gy1g59sd1aky1j325s0m80xf.jpg">
-<meta property="og:updated_time" content="2019-07-23T09:17:57.123Z">
+<meta property="og:updated_time" content="2019-07-31T09:15:44.317Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="每天10个前端知识点：面向对象(上)">
 <meta name="twitter:description" content="以下内容若有问题烦请即时告知我予以修改，以免误导更多人。  1. 面向对象(1) 对象组成 属性(变量) 方法(函数)  (2) 面向对象特征 封装 继承 子级可以继承父级的一切东西 多态 子级可以继承多个父级  (3) 对象相关方法">
@@ -220,7 +220,7 @@ var _hmt = _hmt || [];
 <blockquote>
 <p><strong>JSON不是一个类型，其父类型就是Object</strong><br><code>json.constructor == JSON;</code>  // false<br><code>json.constructor == Object;</code>  // true</p>
 </blockquote>
-<h4 id="执念"><a href="#执念" class="headerlink" title="执念"></a>执念</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	var arr = [1, 2];</span><br><span class="line">	var json = &#123;&#125;;</span><br><span class="line">	var oDate = new Date();</span><br><span class="line"></span><br><span class="line">	console.log(arr.constructor == Array); // true</span><br><span class="line">	console.log(json.constructor == JSON); // false</span><br><span class="line">	console.log(json.constructor == Object); // true</span><br><span class="line"></span><br><span class="line">	console.log(typeof oDate); // object</span><br><span class="line">	console.log(oDate instanceof Date); // true</span><br><span class="line">	console.log(typeof Date); // function</span><br><span class="line">	console.log(Date instanceof Function); // true</span><br><span class="line">	console.log(oDate instanceof Function); // false</span><br><span class="line"></span><br><span class="line">	console.log(typeof Image); // function</span><br><span class="line">	console.log(Image instanceof Function); // true</span><br><span class="line"></span><br><span class="line">	// 开始划重点</span><br><span class="line">	console.log(Function instanceof Object); // true</span><br><span class="line">	console.log(Object instanceof Function); // true</span><br><span class="line">	console.log(Object instanceof Object); // true</span><br><span class="line">	console.log(Function instanceof Function); // true</span><br><span class="line"></span><br><span class="line">	console.log(arr instanceof Array); // true</span><br><span class="line">	console.log(Array instanceof Object); // true</span><br><span class="line">	console.log(arr instanceof Object); // *true</span><br><span class="line"></span><br><span class="line">	console.log(arr instanceof Array); // true</span><br><span class="line">	console.log(Array instanceof Function); // true</span><br><span class="line">	console.log(arr instanceof Function); // *false</span><br><span class="line"></span><br><span class="line">	Object.prototype.run = 7;</span><br><span class="line">	var run = 5;</span><br><span class="line">	var arr2 = [];</span><br><span class="line">	console.log(run); // 5</span><br><span class="line">	console.log(typeof run); // number</span><br><span class="line">	console.log(run instanceof Number); // false</span><br><span class="line">	console.log(Number instanceof Object); // true</span><br><span class="line">	console.log(Boolean instanceof Object); // true</span><br><span class="line">	console.log(run instanceof Object); // false</span><br><span class="line">	console.log(arr2.run); // 7</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="执念"><a href="#执念" class="headerlink" title="执念"></a>执念</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	var arr = [1, 2];</span><br><span class="line">	var json = &#123;&#125;;</span><br><span class="line">	var oDate = new Date();</span><br><span class="line"></span><br><span class="line">	console.log(arr.constructor == Array); // true</span><br><span class="line">	console.log(json.constructor == JSON); // false</span><br><span class="line">	console.log(json.constructor == Object); // true</span><br><span class="line"></span><br><span class="line">	console.log(typeof oDate); // object</span><br><span class="line">	console.log(oDate instanceof Date); // true</span><br><span class="line">	console.log(typeof Date); // function</span><br><span class="line">	console.log(Date instanceof Function); // true</span><br><span class="line">	console.log(oDate instanceof Function); // false</span><br><span class="line"></span><br><span class="line">	console.log(typeof Image); // function</span><br><span class="line">	console.log(Image instanceof Function); // true</span><br><span class="line"></span><br><span class="line">	// 开始划重点</span><br><span class="line">Function instanceof Object; // true</span><br><span class="line">Object instanceof Function; // true</span><br><span class="line">Object instanceof Object; // true</span><br><span class="line">Function instanceof Function; // true</span><br><span class="line"></span><br><span class="line">arr instanceof Array; // true</span><br><span class="line">Array instanceof Object; // true</span><br><span class="line">arr instanceof Object; // *true</span><br><span class="line"></span><br><span class="line">Array instanceof Function; // true</span><br><span class="line">arr instanceof Function; // *false</span><br><span class="line"></span><br><span class="line">1 instanceof Number; // false</span><br><span class="line"></span><br><span class="line">	Object.prototype.run = 7;</span><br><span class="line">	var run = 5;</span><br><span class="line">	var arr2 = [];</span><br><span class="line">	console.log(run); // 5</span><br><span class="line">	console.log(typeof run); // number</span><br><span class="line">	console.log(run instanceof Number); // false</span><br><span class="line">	console.log(Number instanceof Object); // true</span><br><span class="line">	console.log(Boolean instanceof Object); // true</span><br><span class="line">	console.log(run instanceof Object); // false</span><br><span class="line">	console.log(arr2.run); // 7</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="2-引用类型"><a href="#2-引用类型" class="headerlink" title="2. 引用类型"></a>2. 引用类型</h2><ul>
 <li>Object类型</li>
 <li>Array类型</li>
@@ -546,11 +546,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webview</a>
+                <a href="javascript:void(0)" class="js-tag color5">前端论坛</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">前端论坛</a>
+                <a href="javascript:void(0)" class="js-tag color3">微信</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -558,7 +558,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">微信</a>
+                <a href="javascript:void(0)" class="js-tag color3">webview</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -578,15 +578,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">特效</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">规范</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">特效</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -602,11 +602,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">爱旅游</a>
+                <a href="javascript:void(0)" class="js-tag color4">爱生活</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">爱生活</a>
+                <a href="javascript:void(0)" class="js-tag color4">爱旅游</a>
               </li>
              
               <li class="article-tag-list-item">
