@@ -30,6 +30,8 @@ date: 2019-07-26 17:07:48
 
 `<slot>` 元素作为组件模板之中的内容分发插槽。`<slot>` 元素自身将被替换。
 
+[](https://mp.weixin.qq.com/s?__biz=MzA4ODUzNTE2Nw==&mid=2451045822&idx=1&sn=0958039b4aa548dae2e5a5cdc5132a7c&chksm=87cbe4aeb0bc6db8ecf9406de4f0f517d26456c7cde9e7c83324ea09f3f3443ea1eeb96ffb38&token=1261701428&lang=zh_CN#rd)
+
 ### es5源码
 
 ``` javascript
@@ -101,7 +103,7 @@ vm.$slots = resolveSlots(renderChildren, parentVnode.context);
 
 ## es6源码
 
-``` es6
+``` javascript
 export function renderSlot (
   name: string,
   fallback: ?Array<VNode>,
