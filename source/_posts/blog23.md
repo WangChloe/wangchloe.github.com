@@ -319,7 +319,8 @@ arr instanceof Function; // *false
 - apply
   - `fn.apply(a, [p1, p2]);`  改变this指向并传入参数数组
   - `fn.apply(a, arguments);`  改变this指向并传入当前方法(非fn)的参数数组
-
+- bind
+  - `fn.aplly(a);`  改变this指向，**只生效一次**
 
 ---
 更多内容可以订阅本人微信公众号，一起开启前端小白进阶的世界！
