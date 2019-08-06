@@ -5798,6 +5798,10 @@
 <li><code>fn.apply(a, arguments);</code>  改变this指向并传入当前方法(非fn)的参数数组</li>
 </ul>
 </li>
+<li>bind<ul>
+<li><code>fn.aplly(a);</code>  改变this指向，<strong>只生效一次</strong></li>
+</ul>
+</li>
 </ul>
 <hr>
 <p>更多内容可以订阅本人微信公众号，一起开启前端小白进阶的世界！<br><img src="http://ww1.sinaimg.cn/large/006tNc79gy1g59sd1aky1j325s0m80xf.jpg" alt="微信公众号：无媛无故"></p>
